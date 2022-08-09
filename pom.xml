@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.sipue</groupId>
+    <artifactId>sipue-cloud</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+
+    <modules>
+        <module>sipue-common</module>
+        <module>sipue-gateway</module>
+        <module>user-center</module>
+        <module>backstage-center</module>
+        <module>code-generator</module>
+        <module>sipue-visual</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <java.version>8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-cloud-alibaba-dependencies.version>2021.1</spring-cloud-alibaba-dependencies.version>
+        <spring-boot.version>2.5.7</spring-boot.version>
+        <spring-cloud-dependencies.version>2020.0.4</spring-cloud-dependencies.version>
+
+        <!-- java工具包 -->
+        <hutool.version>5.7.15</hutool.version>
+        <lombok.version>1.18.22</lombok.version>
+        <fastjson.version>1.2.78</fastjson.version>
+        <!-- 数据库相关 -->
+        <mybatis-plus.version>3.5.0</mybatis-plus.version>
+        <dynamic-ds.version>3.5.0</dynamic-ds.version>
+        <druid-starter.version>1.2.8</druid-starter.version>
+
+        <jasypt.version>2.1.0</jasypt.version>
+        <userAgent.version>1.21</userAgent.version>
+        <transmittable.version>2.12.1</transmittable.version>
+        <swagger3.version>3.0.0</swagger3.version>
+        <banner.version>1.0.2</banner.version>
+        <redisson-starter.version>3.16.1</redisson-starter.version>
+
+        <userAgent.version>1.21</userAgent.version>
+        <xxl-job.version>2.3.1</xxl-job.version>
+    </properties>
+
+    <dependencies>
+        <!-- 读取bootstrap.yml用,不引入则读取不了 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+        <!-- lombok插件 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- springboot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- springCloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- springCloudAlibaba -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- 项目banner显示插件 -->
+            <dependency>
+                <groupId>com.nepxion</groupId>
+                <artifactId>banner</artifactId>
+                <version>${banner.version}</version>
+            </dependency>
+
+            <!-- 工具类 -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-bom</artifactId>
+                <version>${hutool.version}</version>
+                <type>pom</type>
+                <!-- 注意这里是import -->
+                <scope>import</scope>
+            </dependency>
+            <!--fastjson 版本-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- 数据库相关 -->
+            <!--orm 相关-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!--mybatis-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${dynamic-ds.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-core</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!-- druid 官方 starter -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-starter.version}</version>
+            </dependency>
+
+            <!--配置文件加解密-->
+            <dependency>
+                <groupId>com.github.ulisesbocchio</groupId>
+                <artifactId>jasypt-spring-boot-starter</artifactId>
+                <version>${jasypt.version}</version>
+            </dependency>
+            <!-- http请求相关 -->
+            <dependency>
+                <groupId>eu.bitwalker</groupId>
+                <artifactId>UserAgentUtils</artifactId>
+                <version>${userAgent.version}</version>
+            </dependency>
+            <!-- 线程 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId>
+                <version>${transmittable.version}</version>
+            </dependency>
+
+            <!-- swagger接口文档-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${swagger3.version}</version>
+            </dependency>
+            <!-- redis -->
+            <!-- 在Redis基础上的一个Java实用工具包 -->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson-starter.version}</version>
+            </dependency>
+            <!-- ************************************  common包  ********************************** -->
+
+
+            <!-- 公共日志组件 -->
+            <dependency>
+                <groupId>com.sipue</groupId>
+                <artifactId>common-log</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- 公共核心包 -->
+            <dependency>
+                <groupId>com.sipue</groupId>
+                <artifactId>common-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- mybatis通用配置 -->
+            <dependency>
+                <groupId>com.sipue</groupId>
+                <artifactId>common-mybatis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- swagger通用配置 -->
+            <dependency>
+                <groupId>com.sipue</groupId>
+                <artifactId>common-swagger</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipue</groupId>
+                <artifactId>common-redis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipue</groupId>
+                <artifactId>common-auth</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipue</groupId>
+                <artifactId>common-rabbitmq</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipue</groupId>
+                <artifactId>common-job</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipue</groupId>
+                <artifactId>common-feign</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- *********************************** api包 ************************************** -->
+            <!-- 项目api包 -->
+            <dependency>
+                <groupId>com.sipue</groupId>
+                <artifactId>user-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sipue</groupId>
+                <artifactId>backstage-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

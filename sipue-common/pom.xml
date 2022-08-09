@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>sipue-cloud</artifactId>
+        <groupId>com.sipue</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>sipue-common</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>common-core</module>
+        <module>common-log</module>
+        <module>common-mybatis</module>
+        <module>common-swagger</module>
+        <module>common-redis</module>
+        <module>common-auth</module>
+        <module>common-rabbitmq</module>
+        <module>common-job</module>
+        <module>common-feign</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+</project>

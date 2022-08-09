@@ -1,0 +1,23 @@
+package ${package}.${moduleName}.service;
+
+import com.sipue.common.core.model.BasePageDTO;
+import lombok.Getter;
+import lombok.Setter;
+#if(${hasSwagger})
+import io.swagger.annotations.ApiModel;
+#end
+/**
+ * 分页查询${comments}请求参数
+ *
+ * @author ${author}
+ * @date ${datetime}
+ */
+#if(${hasSwagger})
+@ApiModel("分页查询${comments}请求参数")
+#end
+@Getter
+@Setter
+public class ${className}PageDTO extends BasePageDTO{
+
+}
+

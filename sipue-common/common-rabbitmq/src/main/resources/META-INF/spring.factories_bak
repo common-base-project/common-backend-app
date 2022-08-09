@@ -1,0 +1,6 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    DefaultRabbitProvider,\
+    com.sipue.common.rabbitmq.listener.RabbitMessageListener,\
+    RabbitMqCustomConfiguration,\
+    SpringBeanUtils
+

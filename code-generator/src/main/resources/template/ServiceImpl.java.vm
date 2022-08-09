@@ -1,0 +1,39 @@
+package ${package}.${moduleName}.service.impl;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+import ${package}.${moduleName}.service.${iclassName}Service;
+import ${package}.${moduleName}.mapper.${className}Mapper;
+import ${package}.${moduleName}.pojo.vo.${tablePackage}.${className}PageVO;
+import ${package}.${moduleName}.pojo.dto.${tablePackage}.${className}PageDTO;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.sipue.common.core.model.BasePageVO;
+import org.springframework.beans.BeanUtils;
+
+import javax.annotation.Resource;
+import java.util.Map;
+
+/**
+ * ${comments}接口实现类
+ *
+ * @author ${author}
+ * @date ${datetime}
+ */
+@Service
+@Slf4j
+public class ${className}ServiceImpl implements ${iclassName}Service {
+
+    @Resource
+    private ${className}Mapper ${tablePackage}Mapper;
+
+    @Override
+    public BasePageVO<${className}PageVO> get${className}Page(${className}PageDTO params) {
+        Page<${className}PageVO> page = new Page<>(params.getCurrent(), params.getSize());
+        Map<String, Object> map = params.covertMap();
+        ${tablePackage}Mapper.get${className}Page(page, map);
+        BasePageVO<${className}PageVO> pageVO = new BasePageVO<>();
+        BeanUtils.copyProperties(page, pageVO);
+        return pageVO;
+    }
+
+}

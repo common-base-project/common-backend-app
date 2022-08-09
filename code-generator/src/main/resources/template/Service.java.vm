@@ -1,0 +1,24 @@
+package ${package}.${moduleName}.service;
+
+
+import com.sipue.common.core.model.BasePageVO;
+import ${package}.${moduleName}.pojo.vo.${tablePackage}.${className}PageVO;
+import ${package}.${moduleName}.pojo.dto.${tablePackage}.${className}PageDTO;
+
+/**
+ * ${comments}
+ *
+ * @author ${author}
+ * @date ${datetime}
+ */
+public interface ${iclassName}Service  {
+
+    /**
+     * @Description: 分页查询${comments}
+     *
+     * @Author: ${author}
+     * @Date: ${datetime}
+     */
+    BasePageVO<${className}PageVO> get${className}Page(${className}PageDTO params);
+}
+

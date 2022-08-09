@@ -1,0 +1,7 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: user-center
+

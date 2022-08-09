@@ -1,0 +1,9 @@
+server:
+  port: 5004
+
+spring:
+  application:
+    name: xxl-job-admin
+  servlet:
+    context-path: /xxl-job-admin
+

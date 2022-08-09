@@ -1,0 +1,6 @@
+org.springframework.context.ApplicationContextInitializer=\
+    com.sipue.common.core.config.BannerInitializer
+
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    com.sipue.common.core.handler.GlobalExceptionHandler,\
+    com.sipue.common.core.CommonAutoConfiguration

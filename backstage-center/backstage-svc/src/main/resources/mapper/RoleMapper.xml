@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sipue.backstage.mapper.RoleMapper">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <select resultType="com.sipue.backstage.pojo.vo.role.RolePageVO" id="getSysRolePage">
+        select * from sys_role
+    </select>
+
+</mapper>

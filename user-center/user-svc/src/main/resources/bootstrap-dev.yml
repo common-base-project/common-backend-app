@@ -1,0 +1,91 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    dynamic:
+      #指定默认数据源链接
+      primary: db_user
+      datasource:
+        #指定多个数据源链接信息 名称可自己指定
+        db_user:
+          url: jdbc:mysql://111.229.150.34:3306/db_user?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+          username: root
+          password: 123456
+          driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 111.229.150.34
+    port: 6379
+    password: sipue@2022
+    database: 10
+  main:
+    allow-bean-definition-overriding: true # 允许bean覆盖
+
+##### spring-boot-actuator(健康检查)配置
+management:
+  endpoint:
+    web:
+      exposure:
+        include: "*"
+    health:
+      show-details: always
+
+##### 控制台日志打印各格式设置
+logging:
+  pattern:
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m %n"
+
+### 项目定制配置
+##### 是否开启请求日志记录
+sipue:
+  common:
+    request:
+      log:
+        enabled: true
+    redis:
+      #redis默认缓存时间为600,代码里面已默认,使用默认值时可不配置此参数
+      cache-default-expire-second: 600
+    auth:
+      #过期时间 24h 单位:秒
+      expire: 86400
+      #刷新token的过期时间 一个月 单位:秒
+      refresh-expire: 2592000
+  api:
+    backstage: http://localhost:8001
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.sipue.*.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+
+##### Feign配置
+feign:
+  client:
+    config:
+      default:
+        logger-level: basic
+        # default context 连接超时时间
+        connectTimeout: 60000
+        # default context 读超时时间
+        readTimeout: 60000
+  # 激活Sentinel对Feign的支持
+  sentinel:
+    enabled: false
+  okhttp:
+    enabled: false
+  httpclient:
+    enabled: true
+
+swagger:
+  enabled: true
+  name: 用户中心
+  version: 1.0.0
+  description: 这个是用户中心接口文档
+  try-host: /api/user
+
+#分布式事务，暂时关闭
+seata:
+  enabled: false

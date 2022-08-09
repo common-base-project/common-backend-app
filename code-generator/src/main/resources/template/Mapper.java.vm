@@ -1,0 +1,25 @@
+package ${package}.${moduleName}.dao;
+
+import ${package}.${moduleName}.entity.${className}Entity;
+import ${package}.${moduleName}.pojo.vo.${tablePackage}.${className}PageVO;
+import com.sipue.common.mybatis.mapper.CommonMapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.apache.ibatis.annotations.Param;
+import java.util.Map;
+
+/**
+ * ${comments}Mapper
+ * 
+ * @author ${author}
+ * @date ${datetime}
+ */
+public interface ${className}Mapper extends CommonMapper<${className}Entity> {
+    /**
+     * @Description: 分页查询${comments}
+     *
+     * @Author: ${author}
+     * @Date: ${datetime}
+     */
+    IPage<${className}PageVO> get${className}Page(Page<${className}PageVO> page, @Param("params") Map<String, Object> map);
+}

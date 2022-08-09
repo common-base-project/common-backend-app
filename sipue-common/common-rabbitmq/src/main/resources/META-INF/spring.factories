@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    com.sipue.common.rabbitmq.config.RabbitModulesRegister,\
+    com.sipue.common.rabbitmq.RabbitMqCustomConfiguration,\
+    com.sipue.common.rabbitmq.utils.SpringBeanUtils
+
