@@ -1,0 +1,59 @@
+# https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-apiversion-definition-guide.html
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-svc
+  namespace: sipue-cloud
+  labels:
+    app: user-svc
+spec:
+  replicas: 1
+  minReadySeconds: 60
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: user-svc
+        env: prod
+    spec:
+      imagePullSecrets:
+        - name: registry-secret
+      containers:
+        - name: user-svc
+          image: registry-vpc.cn-beijing.aliyuncs.com/wangjunyu/user-svc:v1.0.0
+          imagePullPolicy: Always
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: prod
+          ports:
+            - containerPort: 8001
+          volumeMounts:
+            - name: time-config
+              mountPath: /etc/localtime
+      volumes:
+        - name: time-config
+          hostPath:
+            path: /usr/share/zoneinfo/Asia/Shanghai
+  selector:
+    matchLabels:
+      app: user-svc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-service
+  namespace: sipue-cloud
+spec:
+  selector:
+    app: user-svc
+    env: prod
+  ports:
+    - protocol: TCP
+      port: 8001
+      targetPort: 8001
+  #    nodePort: 30003
+  #  type: NodePort
+  clusterIP: None

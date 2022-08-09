@@ -1,0 +1,60 @@
+# https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-apiversion-definition-guide.html
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backstage-svc
+  namespace: sipue-cloud
+  labels:
+    app: backstage-svc
+spec:
+  replicas: 2
+  minReadySeconds: 60
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: backstage-svc
+        env: prod
+    spec:
+      imagePullSecrets:
+        - name: registry-secret
+      containers:
+        - name: backstage-svc
+          image: registry-vpc.cn-beijing.aliyuncs.com/wangjunyu/backstage-svc:v1.0.0
+          imagePullPolicy: Always
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: prod
+          ports:
+            - containerPort: 8002
+          volumeMounts:
+            - name: time-config
+              mountPath: /etc/localtime
+      volumes:
+        - name: time-config
+          hostPath:
+            path: /usr/share/zoneinfo/Asia/Shanghai
+  selector:
+    matchLabels:
+      app: backstage-svc
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-service
+  namespace: sipue-cloud
+spec:
+  selector:
+    app: backstage-svc
+    env: prod
+  ports:
+    - protocol: TCP
+      port: 8002
+      targetPort: 8002
+  #    nodePort: 30003
+  #  type: NodePort
+  clusterIP: None

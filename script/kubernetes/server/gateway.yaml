@@ -1,0 +1,60 @@
+# https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-apiversion-definition-guide.html
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sipue-gateway
+  namespace: sipue-cloud
+  labels:
+    app: gateway
+spec:
+  replicas: 1
+  minReadySeconds: 60
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: gateway
+        env: prod
+    spec:
+      imagePullSecrets:
+        - name: registry-secret
+      containers:
+        - name: sipue-gateway
+          image: registry-vpc.cn-beijing.aliyuncs.com/wangjunyu/sipue-gateway:v1.0.0
+          imagePullPolicy: Always
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: prod
+          ports:
+            - containerPort: 8000
+          volumeMounts:
+            - name: time-config
+              mountPath: /etc/localtime
+      volumes:
+        - name: time-config
+          hostPath:
+            path: /usr/share/zoneinfo/Asia/Shanghai
+  selector:
+    matchLabels:
+      app: gateway
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gateway-service
+  namespace: sipue-cloud
+spec:
+  selector:
+    app: gateway
+    env: prod
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+      nodePort: 30003
+  #先nodeport测试，有域名换成clusterIp
+  type: NodePort
+  #clusterIP: None

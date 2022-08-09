@@ -50,6 +50,7 @@ sipue:
       refresh-expire: 2592000
   api:
     backstage: http://localhost:8001
+    #backstage: http://backstage-svc:8001
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
