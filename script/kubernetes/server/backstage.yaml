@@ -7,7 +7,7 @@ metadata:
   labels:
     app: backstage-svc
 spec:
-  replicas: 2
+  replicas: 1
   minReadySeconds: 60
   strategy:
     rollingUpdate:
@@ -17,19 +17,19 @@ spec:
     metadata:
       labels:
         app: backstage-svc
-        env: prod
+        env: dev
     spec:
       imagePullSecrets:
         - name: registry-secret
       containers:
         - name: backstage-svc
-          image: registry-vpc.cn-beijing.aliyuncs.com/wangjunyu/backstage-svc:v1.0.0
+          image: harbor.test.sipue.cn/sipue-cloud/backstage-svc:v1.0.0
           imagePullPolicy: Always
           env:
             - name: SPRING_PROFILES_ACTIVE
-              value: prod
+              value: dev
           ports:
-            - containerPort: 8002
+            - containerPort: 8001
           volumeMounts:
             - name: time-config
               mountPath: /etc/localtime
@@ -50,11 +50,11 @@ metadata:
 spec:
   selector:
     app: backstage-svc
-    env: prod
+    env: dev
   ports:
     - protocol: TCP
-      port: 8002
-      targetPort: 8002
+      port: 8001
+      targetPort: 8001
   #    nodePort: 30003
   #  type: NodePort
   clusterIP: None

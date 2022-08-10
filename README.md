@@ -12,11 +12,13 @@
 - 数据库连接池：Druid
 - 服务注册与发现: k8s svc
 - 客户端负载均衡：k8s svc
-- 熔断组件：Sentinel
 - 网关组件：Spring Cloud Gateway
 - 日志管理：Logback
 - 分布式事务：Seata
 - 分布式锁：Redisson
+
+### 系统架构图
+![系统架构](script/images/cloud.jpg)
 
 ### 模块说明
 

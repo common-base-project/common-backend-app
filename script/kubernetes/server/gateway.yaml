@@ -17,7 +17,7 @@ spec:
     metadata:
       labels:
         app: gateway
-        env: prod
+        env: dev
     spec:
       imagePullSecrets:
         - name: registry-secret
@@ -27,7 +27,7 @@ spec:
           imagePullPolicy: Always
           env:
             - name: SPRING_PROFILES_ACTIVE
-              value: prod
+              value: dev
           ports:
             - containerPort: 8000
           volumeMounts:
@@ -49,7 +49,7 @@ metadata:
 spec:
   selector:
     app: gateway
-    env: prod
+    env: dev
   ports:
     - protocol: TCP
       port: 80

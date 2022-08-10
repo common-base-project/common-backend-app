@@ -73,7 +73,7 @@ public class AuthServiceImpl implements IAuthService {
         if (Objects.nonNull(authority)) {
             tokenStore.repeatLoin(Session.getBizType(),Session.getPlatform(),authority.getToken());
             tokenStore.removeAuthAccessToken(Session.getBizType(),Session.getPlatform(),authority.getToken());
-            tokenStore.removeAuthRefreshToken(Session.getBizType(),Session.getPlatform(),authority.getToken());
+            tokenStore.removeAuthRefreshToken(Session.getBizType(),Session.getPlatform(),authority.getRefreshToken());
             tokenStore.removeAuthority(Session.getBizType(),userDetail.getUserId());
         }
         AuthAccessToken authAccessToken = tokenStore.createAccessToken(userDetail, Session.getBizType(), Session.getPlatform());

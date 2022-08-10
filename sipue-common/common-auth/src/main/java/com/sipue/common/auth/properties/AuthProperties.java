@@ -17,15 +17,15 @@ public class AuthProperties {
     public static final String PREFIX = "sipue.common.auth";
 
     /**
-     * 过期时间 2h
+     * 过期时间 24h
      * 单位：s(秒)
      */
-    private Long expire = 7200L;
+    private Long expire = 60 * 60 * 24L;
     /**
-     * 刷新token的过期时间 8h
+     * 刷新token的过期时间 30天
      * 单位：s
      */
-    private Long refreshExpire = 28800L;
+    private Long refreshExpire =  60 * 60 * 24 * 30L;;
     /**
      * 设置解析token时，允许的误差
      * 单位：s

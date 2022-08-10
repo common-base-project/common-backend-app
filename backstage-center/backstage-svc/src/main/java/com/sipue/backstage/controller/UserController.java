@@ -30,7 +30,7 @@ public class UserController {
     private IUserService userService;
 
     @PostMapping("/user/page")
-    @ApiOperation(value = "分页获取用户列表")
+    @ApiOperation(value = "分页获取后台用户列表")
     public Result<BasePageVO<UserPageVO>> getKnowledgePage(@RequestBody @Validated UserPageDTO params){
         return Result.success(userService.getUserPage(params));
     }

@@ -17,7 +17,7 @@ spec:
     metadata:
       labels:
         app: user-svc
-        env: prod
+        env: dev
     spec:
       imagePullSecrets:
         - name: registry-secret
@@ -27,9 +27,9 @@ spec:
           imagePullPolicy: Always
           env:
             - name: SPRING_PROFILES_ACTIVE
-              value: prod
+              value: dev
           ports:
-            - containerPort: 8001
+            - containerPort: 8002
           volumeMounts:
             - name: time-config
               mountPath: /etc/localtime
@@ -49,11 +49,11 @@ metadata:
 spec:
   selector:
     app: user-svc
-    env: prod
+    env: dev
   ports:
     - protocol: TCP
-      port: 8001
-      targetPort: 8001
+      port: 8002
+      targetPort: 8002
   #    nodePort: 30003
   #  type: NodePort
   clusterIP: None

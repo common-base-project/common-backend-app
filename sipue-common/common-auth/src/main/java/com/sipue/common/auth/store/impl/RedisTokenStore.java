@@ -80,7 +80,7 @@ public class RedisTokenStore implements TokenStore {
         tokenInfo.setBizType(bizType.name());
         //tokenInfo.setTokenType(BEARER_HEADER_KEY);
         tokenInfo.setToken(accessToken);
-        tokenInfo.setExpire(authProperties.getExpire());
+        tokenInfo.setExpire(expMillis);
         tokenInfo.setExpireTime(expireTime);
         AuthRefreshToken refreshToken = createRefreshToken(userDetail,bizType,platform);
 
