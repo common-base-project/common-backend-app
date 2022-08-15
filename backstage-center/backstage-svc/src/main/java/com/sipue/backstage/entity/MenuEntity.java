@@ -47,10 +47,6 @@ public class MenuEntity extends LogicDeleteBaseEntity {
 	 */
 	private Integer sortOrder;
 	/**
-	 * 0-开启，1- 关闭
-	 */
-	private String keepAlive;
-	/**
 	 * 菜单类型 （0菜单 1按钮）
 	 */
 	private String type;

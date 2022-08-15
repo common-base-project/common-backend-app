@@ -1,17 +1,22 @@
 package com.sipue.backstage.service.impl;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.sipue.backstage.entity.RoleEntity;
+import com.sipue.backstage.entity.RoleMenuEntity;
 import com.sipue.backstage.mapper.RoleMapper;
-import com.sipue.backstage.pojo.dto.role.RolePageDTO;
-import com.sipue.backstage.pojo.vo.role.RolePageVO;
+import com.sipue.backstage.mapper.RoleMenuMapper;
+import com.sipue.backstage.pojo.dto.role.UpdateRoleMenuDTO;
+import com.sipue.backstage.pojo.vo.role.RoleVO;
 import com.sipue.backstage.service.IRoleService;
-import com.sipue.common.core.model.BasePageVO;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
-import java.util.Map;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 角色表接口实现类
@@ -21,18 +26,37 @@ import java.util.Map;
  */
 @Service
 @Slf4j
-public class RoleServiceImpl implements IRoleService {
+public class RoleServiceImpl extends ServiceImpl<RoleMapper, RoleEntity> implements IRoleService {
 
     @Resource
     private RoleMapper sysRoleMapper;
 
+    @Resource
+    private RoleMenuMapper roleMenuMapper;
+
     @Override
-    public BasePageVO<RolePageVO> getRolePage(RolePageDTO params) {
-        Page<RolePageVO> page = new Page<>(params.getCurrent(), params.getSize());
-        Map<String, Object> map = params.covertMap();
-        sysRoleMapper.getSysRolePage(page, map);
-        BasePageVO<RolePageVO> pageVO = new BasePageVO<>();
-        BeanUtils.copyProperties(page, pageVO);
-        return pageVO;
+    public List<Long> getUserRoles(Long userId) {
+        return sysRoleMapper.getUserRoles(userId);
+    }
+
+    @Override
+    public List<RoleVO> getRoleList() {
+        List<RoleEntity> list = list(Wrappers.emptyWrapper());
+        return list.stream().map(e->e.covertBean(RoleVO.class)).collect(Collectors.toList());
+    }
+
+    @Override
+    @Transactional
+    public void updateRoleMenu(UpdateRoleMenuDTO params) {
+        roleMenuMapper.delete(Wrappers.<RoleMenuEntity>query().lambda().eq(RoleMenuEntity::getRoleId,params.getRoleId()));
+        if(!CollectionUtils.isEmpty(params.getMenuIds())){
+            List<RoleMenuEntity> roleMenuList = params.getMenuIds().stream().map(menuId -> {
+                RoleMenuEntity roleMenu = new RoleMenuEntity();
+                roleMenu.setRoleId(params.getRoleId());
+                roleMenu.setMenuId(menuId);
+                return roleMenu;
+            }).collect(Collectors.toList());
+            roleMenuMapper.batchInsert(roleMenuList);
+        }
     }
 }

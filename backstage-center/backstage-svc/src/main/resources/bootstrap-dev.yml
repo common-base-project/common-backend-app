@@ -7,7 +7,7 @@ spring:
       datasource:
         #指定多个数据源链接信息 名称可自己指定
         db_backstage:
-          url: jdbc:mysql://111.229.150.34:3306/db_backstage?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+          url: jdbc:mysql://localhost:3306/db_backstage?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
           username: root
           password: 123456
           driver-class-name: com.mysql.cj.jdbc.Driver

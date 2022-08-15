@@ -2,12 +2,12 @@ package com.sipue.backstage.service.impl;
 
 import com.sipue.backstage.entity.UserEntity;
 import com.sipue.backstage.enums.ErrorCode;
-import com.sipue.backstage.mapper.UserMapper;
 import com.sipue.backstage.pojo.dto.auth.UserLoginDTO;
 import com.sipue.backstage.pojo.vo.auth.LoginUserVO;
 import com.sipue.backstage.pojo.vo.auth.TokenVO;
 import com.sipue.backstage.pojo.vo.auth.UserLoginVO;
 import com.sipue.backstage.service.IAuthService;
+import com.sipue.backstage.service.IRoleService;
 import com.sipue.backstage.service.IUserService;
 import com.sipue.common.auth.model.AuthAccessToken;
 import com.sipue.common.auth.model.Authority;
@@ -15,12 +15,12 @@ import com.sipue.common.auth.store.TokenStore;
 import com.sipue.common.core.exception.ServiceException;
 import com.sipue.common.core.model.Session;
 import com.sipue.common.core.model.UserDetail;
-import com.sipue.common.redis.template.RedisRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -42,6 +42,9 @@ public class AuthServiceImpl implements IAuthService {
     @Resource
     private TokenStore tokenStore;
 
+    @Resource
+    private IRoleService roleService;
+
     private static String USER_ID_CACHE_KEY = "user:userId-%d";
     private static String USER_PHONE_CACHE_KEY = "user:phone-%s";
 
@@ -52,7 +55,13 @@ public class AuthServiceImpl implements IAuthService {
         if (Objects.isNull(userEntity) || !passwordEncoder.matches(params.getPassword(), userEntity.getPassword())) {
             throw new ServiceException(ErrorCode.USER_NOT_MATCH);
         }
+        //查询角色
+        List<Long> roles = roleService.getUserRoles(userEntity.getUserId());
+        if(roles.size() <= 0){
+            throw new ServiceException(ErrorCode.USER_ROLE_FOUND);
+        }
         LoginUserVO loginUserVO = userEntity.covertBean(LoginUserVO.class);
+        loginUserVO.setRoleIds(roles);
         UserDetail userDetail = loginUserVO.covertBean(UserDetail.class);
         userDetail.setNickName(userEntity.getUserName());
         TokenVO tokenVO = createToken(userDetail);

@@ -7,6 +7,8 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 /**
  * 用户对象
  * @author  邓军
@@ -36,8 +38,8 @@ public class LoginUserVO extends BaseModel {
     private String phone;
 
     /**
-     * 电子邮箱
+     * 角色id
      */
-    @ApiModelProperty(value = "电子邮箱")
-    private String email;
+    @ApiModelProperty(value = "角色id")
+    private List<Long> roleIds;
 }

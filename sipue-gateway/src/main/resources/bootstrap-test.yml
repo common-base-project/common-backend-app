@@ -14,17 +14,17 @@ spring:
           lower-case-service-id: true
           enabled: true
       routes:
-        - id: user-center
-          uri: http://user-svc:8002
-          predicates:
-            - Path=/api/user/**
-          filters:
-            - SwaggerHeaderFilter
-            - StripPrefix=2
         - id: backstage-center
           uri: http://backstage-svc:8001
           predicates:
             - Path=/api/backstage/**
+          filters:
+            - SwaggerHeaderFilter
+            - StripPrefix=2
+        - id: user-center
+          uri: http://user-svc:8002
+          predicates:
+            - Path=/api/user/**
           filters:
             - SwaggerHeaderFilter
             - StripPrefix=2

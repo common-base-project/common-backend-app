@@ -1,9 +1,12 @@
 package com.sipue.backstage.service;
 
 
-import com.sipue.backstage.pojo.dto.role.RolePageDTO;
-import com.sipue.backstage.pojo.vo.role.RolePageVO;
-import com.sipue.common.core.model.BasePageVO;
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.sipue.backstage.entity.RoleEntity;
+import com.sipue.backstage.pojo.dto.role.UpdateRoleMenuDTO;
+import com.sipue.backstage.pojo.vo.role.RoleVO;
+
+import java.util.List;
 
 /**
  * 角色表
@@ -11,14 +14,30 @@ import com.sipue.common.core.model.BasePageVO;
  * @author wangjunyu
  * @date 2022-07-12 18:12:55
  */
-public interface IRoleService  {
+public interface IRoleService extends IService<RoleEntity> {
 
     /**
-     * @Description: 分页查询角色表
+     * @Description: 查询用户角色列表
      *
      * @Author: wangjunyu
-     * @Date: 2022-07-12 18:12:55
+     * @Date: 2022/8/1 10:08
      */
-    BasePageVO<RolePageVO> getRolePage(RolePageDTO params);
+    List<Long> getUserRoles(Long userId);
+
+    /**
+     * @Description: 查询角色列表
+     *
+     * @Author: wangjunyu
+     * @Date: 2022/8/12 15:04
+     */
+    List<RoleVO> getRoleList();
+
+    /**
+     * @Description: 更改角色菜单
+     *
+     * @Author: wangjunyu
+     * @Date: 2022/8/12 15:19
+     */
+    void updateRoleMenu(UpdateRoleMenuDTO params);
 }
 

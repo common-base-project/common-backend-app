@@ -21,7 +21,6 @@ public class UserDetail extends BaseModel {
      * 用户Id
      */
     private Long userId;
-
     /**
      * 用户昵称
      */
@@ -31,18 +30,7 @@ public class UserDetail extends BaseModel {
      */
     private String phone;
     /**
-     * 邮箱
-     *
+     * 登录角色
      */
-    private String email;
-
-    /**
-     * 登录机构id
-     */
-    private Long orgId;
-
-    /**
-     * 登录团队id
-     */
-    private Long teamId;
+    private List<Long> roleIds;
 }

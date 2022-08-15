@@ -3,14 +3,15 @@ package com.sipue.backstage.service.impl;
 import cn.hutool.core.lang.tree.Tree;
 import cn.hutool.core.lang.tree.TreeNode;
 import cn.hutool.core.lang.tree.TreeUtil;
+import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.sipue.backstage.entity.MenuEntity;
 import com.sipue.backstage.mapper.MenuMapper;
 import com.sipue.backstage.pojo.dto.menu.AddMenuDTO;
-import com.sipue.backstage.pojo.dto.menu.MenuIdDTO;
 import com.sipue.backstage.pojo.dto.menu.UpdateMenuDTO;
 import com.sipue.backstage.service.IMenuService;
+import com.sipue.common.core.constants.CommonConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,7 @@ import javax.validation.constraints.NotNull;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -45,6 +47,19 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, MenuEntity>  implem
         return TreeUtil.build(collect, parentId);
     }
 
+    @Override
+    public Set<MenuEntity> getMenuByRoleId(Long roleId) {
+        return menuMapper.getMenuByRoleId(roleId);
+    }
+
+    @Override
+    public List<Tree<Long>> filterMenu(Set<MenuEntity> menuSet, Long parentId) {
+        List<TreeNode<Long>> collect = menuSet.stream()
+                .filter(menu -> StrUtil.isNotBlank(menu.getPath())).map(getNodeFunction()).collect(Collectors.toList());
+        Long parent = parentId == null ? CommonConstants.CATALOG : parentId;
+        return TreeUtil.build(collect, parent);
+    }
+
     @NotNull
     private Function<MenuEntity, TreeNode<Long>> getNodeFunction() {
         return menu -> {
@@ -61,7 +76,6 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, MenuEntity>  implem
             extra.put("permission", menu.getPermission());
             extra.put("label", menu.getName());
             extra.put("sortOrder", menu.getSortOrder());
-            extra.put("keepAlive", menu.getKeepAlive());
             node.setExtra(extra);
             return node;
         };
@@ -80,7 +94,7 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, MenuEntity>  implem
     }
 
     @Override
-    public void deleteMenu(MenuIdDTO params) {
-        baseMapper.deleteById(params.getMenuId());
+    public void deleteMenu(Long menuId) {
+        baseMapper.deleteById(menuId);
     }
 }

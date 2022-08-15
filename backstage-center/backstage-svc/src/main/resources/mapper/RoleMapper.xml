@@ -3,9 +3,12 @@
 
 <mapper namespace="com.sipue.backstage.mapper.RoleMapper">
 
-	<!-- 可根据自己的需求，是否要使用 -->
-    <select resultType="com.sipue.backstage.pojo.vo.role.RolePageVO" id="getSysRolePage">
-        select * from sys_role
+    <select resultType="java.lang.Long" id="getUserRoles">
+        SELECT
+            r.role_id
+        FROM
+            sys_user_role ur
+                LEFT JOIN sys_role r ON ur.role_id = r.role_id
+        where ur.deleted = 1 and r.deleted = 1 and ur.user_id = #{userId}
     </select>
-
 </mapper>

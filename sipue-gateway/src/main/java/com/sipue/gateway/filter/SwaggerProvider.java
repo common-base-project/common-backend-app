@@ -69,10 +69,8 @@ public class SwaggerProvider implements SwaggerResourcesProvider {
     private SwaggerResource swaggerResource(String name, String location) {
         String serviceNameCN=name;
         switch (name){
-            case "user-center":serviceNameCN="用户中心";break;
-            case "uaa-center":serviceNameCN="认证中心";break;
             case "backstage-center":serviceNameCN="后台中心";break;
-
+            case "user-center":serviceNameCN="用户中心";break;
             default:break;
         }
         SwaggerResource swaggerResource = new SwaggerResource();

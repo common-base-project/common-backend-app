@@ -64,7 +64,7 @@ public interface CommonConstants {
     /**
      * 目录
      */
-    Integer CATALOG = -1;
+    Long CATALOG = -1L;
 
     /**
      * 菜单

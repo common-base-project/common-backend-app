@@ -3,6 +3,8 @@ package com.sipue.backstage.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.sipue.backstage.entity.MenuEntity;
 
+import java.util.Set;
+
 /**
  * 菜单权限表Mapper
  * 
@@ -11,4 +13,11 @@ import com.sipue.backstage.entity.MenuEntity;
  */
 public interface MenuMapper extends BaseMapper<MenuEntity> {
 
+    /**
+     * @Description: 查询菜单权限列表
+     *
+     * @Author: wangjunyu
+     * @Date: 2022/8/11 17:48
+     */
+    Set<MenuEntity> getMenuByRoleId(Long roleId);
 }

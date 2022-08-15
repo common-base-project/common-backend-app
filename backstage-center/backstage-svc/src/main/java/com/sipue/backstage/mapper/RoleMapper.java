@@ -1,13 +1,11 @@
 package com.sipue.backstage.mapper;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.sipue.backstage.entity.RoleEntity;
-import com.sipue.backstage.pojo.vo.role.RolePageVO;
 import com.sipue.common.mybatis.mapper.CommonMapper;
 import org.apache.ibatis.annotations.Param;
 
-import java.util.Map;
+import java.util.List;
 
 /**
  * 角色表Mapper
@@ -15,12 +13,13 @@ import java.util.Map;
  * @author wangjunyu
  * @date 2022-07-12 18:12:55
  */
-public interface RoleMapper extends CommonMapper<RoleEntity> {
+public interface RoleMapper extends BaseMapper<RoleEntity> {
+
     /**
-     * @Description: 分页查询角色表
+     * @Description: 查询角色列表
      *
      * @Author: wangjunyu
-     * @Date: 2022-07-12 18:12:55
+     * @Date: 2022/8/1 10:12
      */
-    IPage<RolePageVO> getSysRolePage(Page<RolePageVO> page, @Param("params") Map<String, Object> map);
+    List<Long> getUserRoles(@Param("userId") Long userId);
 }

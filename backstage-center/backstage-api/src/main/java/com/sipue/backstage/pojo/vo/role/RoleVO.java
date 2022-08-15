@@ -7,15 +7,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * 分页查询角色表响应
+ * 角色表响应
  *
  * @author wangjunyu
  * @date 2022-07-12 18:12:55
  */
-@ApiModel("分页查询角色表响应")
+@ApiModel("角色表响应")
 @Getter
 @Setter
-public class RolePageVO extends BaseModel{
+public class RoleVO extends BaseModel{
 
     @ApiModelProperty("id")
     private Long roleId;
