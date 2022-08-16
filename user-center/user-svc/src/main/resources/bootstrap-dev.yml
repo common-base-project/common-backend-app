@@ -7,15 +7,14 @@ spring:
       datasource:
         #指定多个数据源链接信息 名称可自己指定
         db_user:
-          url: jdbc:mysql://111.229.150.34:3306/db_user?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+          url: jdbc:mysql://127.0.0.1:3306/db_user?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
           username: root
           password: 123456
           driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
-    host: 111.229.150.34
+    host: 127.0.0.1
     port: 6379
-    password: sipue@2022
-    database: 10
+    database: 1
   main:
     allow-bean-definition-overriding: true # 允许bean覆盖
 
@@ -90,3 +89,13 @@ swagger:
 #分布式事务，暂时关闭
 seata:
   enabled: false
+
+#xxl-job
+xxl:
+  job:
+    admin:
+      addresses: http://localhost:5004
+    executor:
+      #执行器端口，推荐服务端口+1000
+      port: 9002
+      address: http://localhost

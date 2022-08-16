@@ -30,7 +30,7 @@ public class XxlExecutorProperties {
 	/**
 	 * 执行器端口号 [选填]：小于等于0则自动获取；单机部署多个执行器时，注意要配置不同执行器端口；
 	 */
-	private Integer port = -1;
+	private Integer port;
 
 	/**
 	 * 执行器通讯TOKEN [必填]：从配置文件中取不到值时使用默认值；
@@ -40,7 +40,7 @@ public class XxlExecutorProperties {
 	/**
 	 * 执行器运行日志文件存储磁盘路径 [选填] ：需要对该路径拥有读写权限；为空则使用默认路径；
 	 */
-	private String logPath = "logs/applogs/xxl-job/jobhandler";
+	private String logPath = "/home/logs/xxl-job/jobhandler";
 
 	/**
 	 * 执行器日志保存天数 [选填] ：值大于3时生效，启用执行器Log文件定期清理功能，否则不生效；

@@ -74,13 +74,8 @@ public class MybatisPlusMetaObjectHandler implements MetaObjectHandler {
 
     /**
      * 获取 spring security 当前的用户id
-     * @return 当前用户id todo 待处理
      */
     private Long getUserId() {
-        //Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        //if (Optional.ofNullable(authentication).isPresent()) {
-        //    return authentication.getName();
-        //}
         return Session.getUserId();
     }
 
