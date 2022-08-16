@@ -2,6 +2,7 @@ package com.sipue.backstage.controller;
 
 
 import com.sipue.backstage.pojo.dto.user.AddUserDTO;
+import com.sipue.backstage.pojo.dto.user.UpdateUserDTO;
 import com.sipue.backstage.pojo.dto.user.UserPageDTO;
 import com.sipue.backstage.pojo.vo.user.UserPageVO;
 import com.sipue.backstage.service.IUserService;
@@ -31,14 +32,22 @@ public class UserController {
 
     @PostMapping("/user/page")
     @ApiOperation(value = "分页获取后台用户列表")
-    public Result<BasePageVO<UserPageVO>> getKnowledgePage(@RequestBody @Validated UserPageDTO params){
+    public Result<BasePageVO<UserPageVO>> getUserPage(@RequestBody @Validated UserPageDTO params){
         return Result.success(userService.getUserPage(params));
+
     }
 
     @PostMapping("/user/add")
     @ApiOperation(value = "新增用户")
-    public Result getKnowledgePage(@RequestBody @Validated AddUserDTO params){
+    public Result addUser(@RequestBody @Validated AddUserDTO params){
         userService.addUser(params);
+        return Result.success();
+    }
+
+    @PostMapping("/user/update")
+    @ApiOperation(value = "编辑用户")
+    public Result updateUser(@RequestBody @Validated UpdateUserDTO params){
+        userService.updateUser(params);
         return Result.success();
     }
 }

@@ -4,7 +4,18 @@
 <mapper namespace="com.sipue.backstage.mapper.UserMapper">
 
     <select resultType="com.sipue.backstage.pojo.vo.user.UserPageVO" id="getSysUserPage">
-        select user_id,user_name,phone,email,`status`,last_login_time from sys_user
+        select
+            user_id,user_name,phone,email,`status`,last_login_time
+        from sys_user
+        WHERE
+            deleted = 1
+            <if test="params.searchVal != null and params.searchVal != ''">
+                and (
+                user_name like concat(concat('%',#{params.searchVal}),'%')
+                or phone like concat(concat('%',#{params.searchVal}),'%')
+                )
+            </if>
+        order by user_id desc
     </select>
 
 </mapper>

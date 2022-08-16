@@ -49,7 +49,7 @@ public class RoleController {
 
     @PostMapping("/role/update")
     @ApiOperation(value = "修改角色")
-    public Result addRole(@RequestBody @Validated UpdateRoleDTO params){
+    public Result updateRole(@RequestBody @Validated UpdateRoleDTO params){
         RoleEntity entity = params.covertBean(RoleEntity.class);
         roleService.updateById(entity);
         return Result.success();
@@ -57,14 +57,14 @@ public class RoleController {
 
     @PostMapping("/role/delete")
     @ApiOperation(value = "删除角色")
-    public Result addRole(@RequestBody @Validated RoleIdDTO params){
+    public Result delRole(@RequestBody @Validated RoleIdDTO params){
         roleService.removeById(params.getRoleId());
         return Result.success();
     }
 
     @PostMapping("/role/menu/update")
     @ApiOperation(value = "更新角色菜单")
-    public Result addRole(@RequestBody @Validated UpdateRoleMenuDTO params){
+    public Result updateRoleMenu(@RequestBody @Validated UpdateRoleMenuDTO params){
         roleService.updateRoleMenu(params);
         return Result.success();
     }

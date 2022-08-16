@@ -68,7 +68,7 @@ public class MenuController {
 
     @PostMapping("/menu/delete")
     @ApiOperation(value = "删除菜单")
-    public Result updateMenu(@RequestBody @Validated MenuIdDTO params){
+    public Result deleteMenu(@RequestBody @Validated MenuIdDTO params){
         menuService.deleteMenu(params.getMenuId());
         return Result.success();
     }

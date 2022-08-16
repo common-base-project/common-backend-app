@@ -22,5 +22,5 @@ public class UserRoleEntity extends LogicDeleteBaseEntity {
 	/**
 	 * 角色id
 	 */
-	private String roleId;
+	private Long roleId;
 }

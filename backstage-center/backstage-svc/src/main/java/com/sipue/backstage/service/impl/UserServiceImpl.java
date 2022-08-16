@@ -4,9 +4,12 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.sipue.backstage.entity.UserEntity;
+import com.sipue.backstage.entity.UserRoleEntity;
 import com.sipue.backstage.enums.ErrorCode;
 import com.sipue.backstage.mapper.UserMapper;
+import com.sipue.backstage.mapper.UserRoleMapper;
 import com.sipue.backstage.pojo.dto.user.AddUserDTO;
+import com.sipue.backstage.pojo.dto.user.UpdateUserDTO;
 import com.sipue.backstage.pojo.dto.user.UserPageDTO;
 import com.sipue.backstage.pojo.vo.user.UserPageVO;
 import com.sipue.backstage.service.IUserService;
@@ -18,6 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
@@ -46,6 +50,9 @@ public class UserServiceImpl implements IUserService {
     @Resource
     private PasswordEncoder passwordEncoder;
 
+    @Resource
+    private UserRoleMapper userRoleMapper;
+
     private static String USER_ID_CACHE_KEY = "user:userId-%d";
     private static String USER_PHONE_CACHE_KEY = "user:phone-%s";
 
@@ -60,6 +67,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
+    @Transactional
     public void addUser(AddUserDTO params) {
         if (Objects.nonNull(getUserByPhone(params.getPhone()))) {
             throw new ServiceException(ErrorCode.USER_ALREADY_EXISTS);
@@ -67,6 +75,31 @@ public class UserServiceImpl implements IUserService {
         UserEntity userEntity = params.covertBean(UserEntity.class);
         userEntity.setPassword(passwordEncoder.encode(params.getPassword()));
         userMapper.insert(userEntity);
+        //用户角色
+        UserRoleEntity userRoleEntity = new UserRoleEntity();
+        userRoleEntity.setUserId(userEntity.getUserId());
+        userRoleEntity.setRoleId(params.getRoleId());
+        userRoleMapper.insert(userRoleEntity);
+    }
+
+    @Override
+    @Transactional
+    public void updateUser(UpdateUserDTO params) {
+        UserEntity oldEntity = userMapper.selectById(params.getUserId());
+        if (Objects.isNull(oldEntity)) {
+            throw new ServiceException(ErrorCode.USER_NOT_FOUND);
+        }
+        UserEntity entity = params.covertBean(UserEntity.class);
+        userMapper.updateById(entity);
+        //删除用户角色
+        LambdaQueryWrapper<UserRoleEntity> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(UserRoleEntity::getUserId,params.getUserId());
+        userRoleMapper.delete(wrapper);
+        //用户角色
+        UserRoleEntity userRoleEntity = new UserRoleEntity();
+        userRoleEntity.setUserId(entity.getUserId());
+        userRoleEntity.setRoleId(params.getRoleId());
+        userRoleMapper.insert(userRoleEntity);
     }
 
     @Override
