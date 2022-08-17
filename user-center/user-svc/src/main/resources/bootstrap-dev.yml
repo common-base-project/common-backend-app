@@ -17,6 +17,24 @@ spring:
     database: 1
   main:
     allow-bean-definition-overriding: true # 允许bean覆盖
+  rabbitmq:
+    host: 111.229.150.34
+    #    port: 5672
+    username: wangjunyu
+    password: 123456
+    virtual-host: wjy_vhost
+    # 消息发送确认
+    publisher-confirm-type: correlated
+    # 开启发送失败退回
+    publisher-returns: true
+    listener:
+      simple:
+        # 消费端最小并发数
+        concurrency: 1
+        # 消费端最大并发数
+        max-concurrency: 5
+        # 一次请求中预处理的消息数量
+        prefetch: 2
 
 ##### spring-boot-actuator(健康检查)配置
 management:
@@ -47,6 +65,14 @@ sipue:
       expire: 86400
       #刷新token的过期时间 一个月 单位:秒
       refresh-expire: 2592000
+    rabbitmq:
+      modules:
+        - queue:
+            name: sipue.test.queue
+            routing-key: sipue.test.route
+          exchange:
+            name: sipue.test.exchange
+            type: DIRECT
   api:
     backstage: http://localhost:8001
     #backstage: http://backstage-svc:8001
@@ -97,5 +123,5 @@ xxl:
       addresses: http://localhost:5004
     executor:
       #执行器端口，推荐服务端口+1000
-      port: 9002
+      port: 10002
       address: http://localhost

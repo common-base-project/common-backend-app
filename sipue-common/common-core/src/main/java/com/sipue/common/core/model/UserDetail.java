@@ -1,5 +1,7 @@
 package com.sipue.common.core.model;
 
+import com.sipue.common.core.model.role.RoleVO;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -30,7 +32,11 @@ public class UserDetail extends BaseModel {
      */
     private String phone;
     /**
-     * 登录角色
+     * 所属角色
      */
-    private List<Long> roleIds;
+    @ApiModelProperty(value = "所属角色")
+    private List<RoleVO> roles;
+
+    @ApiModelProperty(value = "权限")
+    private List<String> perissions;
 }

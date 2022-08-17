@@ -1,9 +1,8 @@
 #服务id小写
 spring:
   redis:
-    host: 111.229.150.34
+    host: localhost
     port: 6379
-    password: sipue@2022
     database: 10
     main:
       allow-bean-definition-overriding: true # 允许bean覆盖
@@ -15,14 +14,14 @@ spring:
           enabled: true
       routes:
         - id: backstage-center
-          uri: http://localhost:8001
+          uri: http://localhost:9001
           predicates:
             - Path=/api/backstage/**
           filters:
             - SwaggerHeaderFilter
             - StripPrefix=2
         - id: user-center
-          uri: http://localhost:8002
+          uri: http://localhost:9002
           predicates:
             - Path=/api/user/**
           filters:

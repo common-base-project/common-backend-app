@@ -1,4 +1,4 @@
-package com.sipue.backstage.pojo.vo.role;
+package com.sipue.common.core.model.role;
 
 import com.sipue.common.core.model.BaseModel;
 import io.swagger.annotations.ApiModel;

@@ -2,7 +2,7 @@ package com.sipue.backstage.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.sipue.backstage.entity.RoleEntity;
-import com.sipue.common.mybatis.mapper.CommonMapper;
+import com.sipue.common.core.model.role.RoleVO;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -21,5 +21,5 @@ public interface RoleMapper extends BaseMapper<RoleEntity> {
      * @Author: wangjunyu
      * @Date: 2022/8/1 10:12
      */
-    List<Long> getUserRoles(@Param("userId") Long userId);
+    List<RoleVO> getUserRoles(@Param("userId") Long userId);
 }

@@ -1,6 +1,7 @@
 package com.sipue.backstage.pojo.vo.auth;
 
 
+import com.sipue.common.core.model.role.RoleVO;
 import com.sipue.common.core.model.BaseModel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -38,8 +39,11 @@ public class LoginUserVO extends BaseModel {
     private String phone;
 
     /**
-     * 角色id
+     * 所属角色
      */
-    @ApiModelProperty(value = "角色id")
-    private List<Long> roleIds;
+    @ApiModelProperty(value = "所属角色")
+    private List<RoleVO> roles;
+
+    @ApiModelProperty(value = "权限")
+    private List<String> perissions;
 }

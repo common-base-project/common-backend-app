@@ -6,6 +6,7 @@ import com.sipue.backstage.pojo.dto.auth.UserLoginDTO;
 import com.sipue.backstage.pojo.vo.auth.LoginUserVO;
 import com.sipue.backstage.pojo.vo.auth.TokenVO;
 import com.sipue.backstage.pojo.vo.auth.UserLoginVO;
+import com.sipue.common.core.model.role.RoleVO;
 import com.sipue.backstage.service.IAuthService;
 import com.sipue.backstage.service.IRoleService;
 import com.sipue.backstage.service.IUserService;
@@ -22,6 +23,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * 登录
@@ -56,12 +58,14 @@ public class AuthServiceImpl implements IAuthService {
             throw new ServiceException(ErrorCode.USER_NOT_MATCH);
         }
         //查询角色
-        List<Long> roles = roleService.getUserRoles(userEntity.getUserId());
+        List<RoleVO> roles = roleService.getUserRoles(userEntity.getUserId());
         if(roles.size() <= 0){
             throw new ServiceException(ErrorCode.USER_ROLE_FOUND);
         }
         LoginUserVO loginUserVO = userEntity.covertBean(LoginUserVO.class);
-        loginUserVO.setRoleIds(roles);
+        loginUserVO.setRoles(roles);
+        List<String> perissions = roleService.getRolePermissions(roles.stream().map(RoleVO::getRoleId).collect(Collectors.toList()));
+        loginUserVO.setPerissions(perissions);
         UserDetail userDetail = loginUserVO.covertBean(UserDetail.class);
         userDetail.setNickName(userEntity.getUserName());
         TokenVO tokenVO = createToken(userDetail);

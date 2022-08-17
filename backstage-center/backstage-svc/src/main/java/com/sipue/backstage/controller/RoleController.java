@@ -6,7 +6,8 @@ import com.sipue.backstage.pojo.dto.role.AddRoleDTO;
 import com.sipue.backstage.pojo.dto.role.RoleIdDTO;
 import com.sipue.backstage.pojo.dto.role.UpdateRoleDTO;
 import com.sipue.backstage.pojo.dto.role.UpdateRoleMenuDTO;
-import com.sipue.backstage.pojo.vo.role.RoleVO;
+import com.sipue.common.auth.annotation.RequiresPermissions;
+import com.sipue.common.core.model.role.RoleVO;
 import com.sipue.backstage.service.IRoleService;
 import com.sipue.common.core.model.Result;
 import io.swagger.annotations.Api;
@@ -41,6 +42,7 @@ public class RoleController {
 
     @PostMapping("/role/add")
     @ApiOperation(value = "新增角色")
+    @RequiresPermissions("sys_role_add")
     public Result addRole(@RequestBody @Validated AddRoleDTO params){
         RoleEntity entity = params.covertBean(RoleEntity.class);
         roleService.save(entity);
@@ -49,6 +51,7 @@ public class RoleController {
 
     @PostMapping("/role/update")
     @ApiOperation(value = "修改角色")
+    @RequiresPermissions("sys_role_edit")
     public Result updateRole(@RequestBody @Validated UpdateRoleDTO params){
         RoleEntity entity = params.covertBean(RoleEntity.class);
         roleService.updateById(entity);
@@ -57,6 +60,7 @@ public class RoleController {
 
     @PostMapping("/role/delete")
     @ApiOperation(value = "删除角色")
+    @RequiresPermissions("sys_role_del")
     public Result delRole(@RequestBody @Validated RoleIdDTO params){
         roleService.removeById(params.getRoleId());
         return Result.success();
@@ -64,6 +68,7 @@ public class RoleController {
 
     @PostMapping("/role/menu/update")
     @ApiOperation(value = "更新角色菜单")
+    @RequiresPermissions("sys_role_edit")
     public Result updateRoleMenu(@RequestBody @Validated UpdateRoleMenuDTO params){
         roleService.updateRoleMenu(params);
         return Result.success();

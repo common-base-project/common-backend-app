@@ -3,9 +3,12 @@
 
 <mapper namespace="com.sipue.backstage.mapper.RoleMapper">
 
-    <select resultType="java.lang.Long" id="getUserRoles">
+    <select resultType="com.sipue.common.core.model.role.RoleVO" id="getUserRoles">
         SELECT
-            r.role_id
+            r.role_id,
+            r.role_code,
+            r.role_name,
+            r.role_desc
         FROM
             sys_user_role ur
                 LEFT JOIN sys_role r ON ur.role_id = r.role_id

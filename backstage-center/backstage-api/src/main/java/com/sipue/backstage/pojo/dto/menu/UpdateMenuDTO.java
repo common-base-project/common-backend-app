@@ -71,7 +71,7 @@ public class UpdateMenuDTO extends BaseModel {
     /**
      * 菜单类型 （0菜单 1按钮）
      */
-    @ApiModelProperty(value = "菜单类型 （0菜单 1按钮）")
+    @ApiModelProperty(value = "菜单类型 （0菜单 1权限）")
     private String type;
 }
 

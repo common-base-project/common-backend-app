@@ -4,9 +4,10 @@ package com.sipue.backstage.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.sipue.backstage.entity.RoleEntity;
 import com.sipue.backstage.pojo.dto.role.UpdateRoleMenuDTO;
-import com.sipue.backstage.pojo.vo.role.RoleVO;
+import com.sipue.common.core.model.role.RoleVO;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * 角色表
@@ -22,7 +23,7 @@ public interface IRoleService extends IService<RoleEntity> {
      * @Author: wangjunyu
      * @Date: 2022/8/1 10:08
      */
-    List<Long> getUserRoles(Long userId);
+    List<RoleVO> getUserRoles(Long userId);
 
     /**
      * @Description: 查询角色列表
@@ -39,5 +40,13 @@ public interface IRoleService extends IService<RoleEntity> {
      * @Date: 2022/8/12 15:19
      */
     void updateRoleMenu(UpdateRoleMenuDTO params);
+
+    /**
+     * @Description: 获取角色权限
+     *
+     * @Author: wangjunyu
+     * @Date: 2022/8/17 10:56
+     */
+    List<String> getRolePermissions(List<Long> roleIds);
 }
 
