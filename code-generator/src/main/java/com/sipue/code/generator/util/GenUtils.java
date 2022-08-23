@@ -32,6 +32,10 @@ public class GenUtils {
         templates.add("template/DTO.java.vm");
         templates.add("template/VO.java.vm");
         templates.add("template/Mapper.xml.vm");
+        templates.add("template/AddDTO.java.vm");
+        templates.add("template/UpdateDTO.java.vm");
+        templates.add("template/IdDTO.java.vm");
+        templates.add("template/Controller.java.vm");
         /*;
         templates.add("template/menu.sql.vm");
         templates.add("template/Controller.java.vm");
@@ -43,40 +47,52 @@ public class GenUtils {
     /**
      * 获取文件名
      */
-    public static String getFileName(String template, String className, String packageName, String moduleName) {
+    public static String getFileName(String template, String className, String packageName, String moduleName,String tablePackgeName) {
         String packagePath = "main" + File.separator + "java" + File.separator;
         if (StringUtils.isNotBlank(packageName)) {
             packagePath += packageName.replace(".", File.separator) + File.separator + moduleName + File.separator;
         }
-        if (template.contains("Entity.java.vm")) {
+        if (template.equals("template/Entity.java.vm")) {
             return packagePath + "entity" + File.separator + className + "Entity.java";
         }
 
-        if (template.contains("Mapper.java.vm")) {
+        if (template.equals("template/Mapper.java.vm")) {
             return packagePath + "mapper" + File.separator + className + "Mapper.java";
         }
 
-        if (template.contains("Service.java.vm")) {
+        if (template.equals("template/Service.java.vm")) {
             return packagePath + "service" + File.separator + className + "Service.java";
         }
 
-        if (template.contains("ServiceImpl.java.vm")) {
+        if (template.equals("template/ServiceImpl.java.vm")) {
             return packagePath + "service" + File.separator + "impl" + File.separator + className + "ServiceImpl.java";
         }
 
-        if (template.contains("DTO.java.vm")) {
-            return packagePath + "pojo" + File.separator + "dto" + File.separator + packageName + File.separator + className + "PageDTO.java";
+        if (template.equals("template/DTO.java.vm")) {
+            return packagePath + "pojo" + File.separator + "dto" + File.separator + tablePackgeName + File.separator + className + "PageDTO.java";
         }
 
-        if (template.contains("VO.java.vm")) {
-            return packagePath + "pojo" + File.separator + "vo" + File.separator + packageName + File.separator + className + "PageVO.java";
+        if (template.equals("template/AddDTO.java.vm")) {
+            return packagePath + "pojo" + File.separator + "dto" + File.separator + tablePackgeName + File.separator  + "Add" + className + "DTO.java";
         }
 
-        if (template.contains("Controller.java.vm")) {
+        if (template.equals("template/UpdateDTO.java.vm")) {
+            return packagePath + "pojo" + File.separator + "dto" + File.separator + tablePackgeName + File.separator  + "Update" + className + "DTO.java";
+        }
+
+        if (template.equals("template/IdDTO.java.vm")) {
+            return packagePath + "pojo" + File.separator + "dto" + File.separator + tablePackgeName + File.separator  + className + "IdDTO.java";
+        }
+
+        if (template.equals("template/VO.java.vm")) {
+            return packagePath + "pojo" + File.separator + "vo" + File.separator + tablePackgeName + File.separator + className + "PageVO.java";
+        }
+
+        if (template.equals("template/Controller.java.vm")) {
             return packagePath + "controller" + File.separator + className + "Controller.java";
         }
 
-        if (template.contains("Mapper.xml.vm")) {
+        if (template.equals("template/Mapper.xml.vm")) {
             return "main" + File.separator + "resources" + File.separator + "mapper" + File.separator + className + "Mapper.xml";
         }
         return null;
@@ -140,7 +156,11 @@ public class GenUtils {
         //封装模板数据
         Map<String, Object> map = new HashMap<>();
         map.put("tableName", table.getTableName());
+        if(table.getComments().endsWith("表")){
+            table.setComments(table.getComments().substring(0,table.getComments().length()-1));
+        }
         map.put("comments", table.getComments());
+
         map.put("pk", table.getPk());
         map.put("className", table.getClassName());
         map.put("tablePackage", table.getPackageName());
@@ -150,6 +170,7 @@ public class GenUtils {
         map.put("columns", table.getColumns());
         map.put("hasBigDecimal", hasBigDecimal);
         map.put("hasDate", hasDate);
+        map.put("hasDateTime", hasDateTime);
         map.put("package", packageConfig.getParent());
         map.put("moduleName", packageConfig.getModuleName());
         map.put("author", globalConfig.getAuthor());
@@ -175,7 +196,7 @@ public class GenUtils {
                 if(template.equals("template/Service.java.vm")){
                     agileClass = "I" + className;
                 }
-                zip.putNextEntry(new ZipEntry(getFileName(template, agileClass, packageConfig.getParent(), packageConfig.getModuleName())));
+                zip.putNextEntry(new ZipEntry(getFileName(template, agileClass, packageConfig.getParent(), packageConfig.getModuleName(),table.getPackageName())));
                 IOUtils.write(sw.toString(), zip, "UTF-8");
                 IOUtils.closeQuietly(sw);
                 zip.closeEntry();

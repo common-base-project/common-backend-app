@@ -29,20 +29,12 @@
         </dependency>
         <dependency>
             <groupId>com.sipue</groupId>
-            <artifactId>common-job</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.sipue</groupId>
-            <artifactId>common-rabbitmq</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.sipue</groupId>
             <artifactId>common-auth</artifactId>
         </dependency>
 
         <dependency>
             <groupId>com.sipue</groupId>
-            <artifactId>backstage-api</artifactId>
+            <artifactId>user-api</artifactId>
         </dependency>
 
         <dependency>

@@ -18,7 +18,7 @@ public class Generator {
     /**
      * 数据库链接（只支持mysql）
      */
-    private static String url = "jdbc:mysql://127.0.0.1:3306/db_backstage?serverTimezone=UTC";
+    private static String url = "jdbc:mysql://127.0.0.1:3306/db_user?serverTimezone=UTC";
     private static String user = "root";
     private static String pwd = "123456";
 
@@ -29,13 +29,13 @@ public class Generator {
                 .globalConfig(builder -> {
                     builder.author("wangjunyu") //设置作者
                             .outputDir("G://")  //生成的文件输出目录
-                            .tableName("sys_role") //表名
+                            .tableName("t_user") //表名
                             .disableOpenDir() //禁止打开输出目录,如需生成代码后打开目录请删掉这行
                             .enableSwagger(true);  //开启swagger模式, false为关闭 ,默认为true
                 })
                 .packageConfig(builder -> {
                     builder.parent("com.sipue") //设置父包名
-                         .moduleName("backstage"); //服务模块名：如user-svc就是user
+                         .moduleName("user"); //服务模块名：如user-svc就是user
                 }).execute();
     }
 }

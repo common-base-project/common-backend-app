@@ -1,0 +1,73 @@
+package ${package}.${moduleName}.service;
+
+
+import com.sipue.common.core.model.BasePageVO;
+import com.sipue.common.core.model.Result;
+import ${package}.${moduleName}.service.${iclassName}Service;
+import ${package}.${moduleName}.pojo.vo.${tablePackage}.${className}PageVO;
+import ${package}.${moduleName}.pojo.dto.${tablePackage}.${className}PageDTO;
+import ${package}.${moduleName}.pojo.dto.${tablePackage}.Add${className}DTO;
+import ${package}.${moduleName}.pojo.dto.${tablePackage}.Update${className}DTO;
+import ${package}.${moduleName}.pojo.dto.${tablePackage}.${className}IdDTO;
+#if(${hasSwagger})
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+#end
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+
+/**
+ * ${comments}管理
+ *
+ * @author ${author}
+ * @date ${datetime}
+ */
+#if(${hasSwagger})
+@Api(tags = "${comments}管理")
+#end
+@RestController
+public class ${className}Controller  {
+
+    @Resource
+    private ${iclassName}Service ${tablePackage}Service;
+
+    @PostMapping("/${tablePackage}/page")
+#if(${hasSwagger})
+    @ApiOperation(value = "分页获取${comments}列表")
+#end
+    public Result<BasePageVO<${className}PageVO>> get${className}Page(@RequestBody @Validated ${className}PageDTO params){
+        return Result.success(${tablePackage}Service.get${className}Page(params));
+    }
+
+    @PostMapping("/${tablePackage}/add")
+#if(${hasSwagger})
+    @ApiOperation(value = "新增${comments}")
+#end
+    public Result add${className}(@RequestBody @Validated Add${className}DTO params){
+        ${tablePackage}Service.add${className}(params);
+        return Result.success();
+    }
+
+    @PostMapping("/${tablePackage}/update")
+#if(${hasSwagger})
+    @ApiOperation(value = "修改${comments}")
+#end
+    public Result update${className}(@RequestBody @Validated Update${className}DTO params){
+        ${tablePackage}Service.update${className}(params);
+        return Result.success();
+    }
+
+    @PostMapping("/${tablePackage}/delete")
+#if(${hasSwagger})
+    @ApiOperation(value = "删除${comments}")
+#end
+    public Result delete${className}(@RequestBody @Validated ${className}IdDTO params){
+        ${tablePackage}Service.delete${className}(params.get${pk.attrName}());
+        return Result.success();
+    }
+}
+

@@ -4,6 +4,8 @@ package ${package}.${moduleName}.service;
 import com.sipue.common.core.model.BasePageVO;
 import ${package}.${moduleName}.pojo.vo.${tablePackage}.${className}PageVO;
 import ${package}.${moduleName}.pojo.dto.${tablePackage}.${className}PageDTO;
+import ${package}.${moduleName}.pojo.dto.${tablePackage}.Add${className}DTO;
+import ${package}.${moduleName}.pojo.dto.${tablePackage}.Update${className}DTO;
 
 /**
  * ${comments}
@@ -20,5 +22,29 @@ public interface ${iclassName}Service  {
      * @Date: ${datetime}
      */
     BasePageVO<${className}PageVO> get${className}Page(${className}PageDTO params);
+
+    /**
+     * @Description: 新增${comments}
+     *
+     * @Author: ${author}
+     * @Date: ${datetime}
+     */
+    void add${className}(Add${className}DTO params);
+
+    /**
+     * @Description: 修改${comments}
+     *
+     * @Author: ${author}
+     * @Date: ${datetime}
+     */
+    void update${className}(Update${className}DTO params);
+
+    /**
+     * @Description: 删除${comments}
+     *
+     * @Author: ${author}
+     * @Date: ${datetime}
+     */
+    void delete${className}(Long ${pk.columnJavaName});
 }
 

@@ -1,0 +1,35 @@
+package ${package}.${moduleName}.service;
+
+import com.sipue.common.core.model.BaseModel;
+import lombok.Getter;
+import lombok.Setter;
+#if(${hasSwagger})
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import javax.validation.constraints.NotNull;
+#end
+
+/**
+ * ${comments}id请求参数
+ *
+ * @author ${author}
+ * @date ${datetime}
+ */
+#if(${hasSwagger})
+@ApiModel("${comments}id请求参数")
+#end
+@Getter
+@Setter
+public class ${className}IdDTO extends BaseModel{
+#foreach ($column in $columns)
+#if($column.columnName == $pk.columnName)
+#if(${hasSwagger})
+
+    @ApiModelProperty(value = "$column.comments",required = true)
+    @NotNull(message = "${column.comments}不能为空")
+#end
+    private $column.attrType $column.columnJavaName;
+#end
+#end
+}
+

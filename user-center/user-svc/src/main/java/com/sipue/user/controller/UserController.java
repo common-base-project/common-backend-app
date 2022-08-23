@@ -1,48 +1,61 @@
 package com.sipue.user.controller;
 
-import com.sipue.backstage.pojo.dto.user.UserPageDTO;
-import com.sipue.backstage.pojo.vo.user.UserPageVO;
-import com.sipue.backstage.service.BackstageUserFeignService;
-import com.sipue.common.core.constants.MessageQueueConst;
+
 import com.sipue.common.core.model.BasePageVO;
 import com.sipue.common.core.model.Result;
-import com.sipue.common.rabbitmq.data.RabbitData;
-import com.sipue.common.rabbitmq.provider.RabbitProvider;
+import com.sipue.user.service.IUserService;
+import com.sipue.user.pojo.vo.user.UserPageVO;
+import com.sipue.user.pojo.dto.user.UserPageDTO;
+import com.sipue.user.pojo.dto.user.AddUserDTO;
+import com.sipue.user.pojo.dto.user.UpdateUserDTO;
+import com.sipue.user.pojo.dto.user.UserIdDTO;
 import io.swagger.annotations.Api;
-import lombok.RequiredArgsConstructor;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
-
+/**
+ * 用户管理
+ *
+ * @author wangjunyu
+ * @date 2022-08-22 17:46:13
+ */
+@Api(tags = "用户管理")
 @RestController
-@RequiredArgsConstructor
-@Api(tags = "用户中心--用户管理")
-public class UserController {
+public class UserController  {
 
     @Resource
-    private BackstageUserFeignService userService;
+    private IUserService userService;
 
-    private final RabbitProvider rabbitProvider;
-
-    @PostMapping(value = "/user/remote")
-    public Result<BasePageVO<UserPageVO>> test() {
-        UserPageDTO userPageDTO = new UserPageDTO();
-        return Result.success(userService.getUserListByIds(userPageDTO));
+    @PostMapping("/user/page")
+    @ApiOperation(value = "分页获取用户列表")
+    public Result<BasePageVO<UserPageVO>> getUserPage(@RequestBody @Validated UserPageDTO params){
+        return Result.success(userService.getUserPage(params));
     }
 
-    @PostMapping(value = "/user/message")
-    public Result message() {
-        RabbitData rabbitData=new RabbitData();
-        rabbitData.setUuid("asfdgf879fa");
-        rabbitProvider.send(MessageQueueConst.SMS_BACK_EXCHANGE, MessageQueueConst.SMS_BACK_ROUTE, rabbitData);
+    @PostMapping("/user/add")
+    @ApiOperation(value = "新增用户")
+    public Result addUser(@RequestBody @Validated AddUserDTO params){
+        userService.addUser(params);
         return Result.success();
     }
 
-    @PostMapping(value = "/v1/detail")
-    public Result findById() {
+    @PostMapping("/user/update")
+    @ApiOperation(value = "修改用户")
+    public Result updateUser(@RequestBody @Validated UpdateUserDTO params){
+        userService.updateUser(params);
         return Result.success();
     }
 
+    @PostMapping("/user/delete")
+    @ApiOperation(value = "删除用户")
+    public Result deleteUser(@RequestBody @Validated UserIdDTO params){
+        userService.deleteUser(params.getUserId());
+        return Result.success();
+    }
 }
+

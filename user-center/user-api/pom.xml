@@ -18,7 +18,7 @@
     <dependencies>
         <dependency>
             <groupId>com.sipue</groupId>
-            <artifactId>common-core</artifactId>
+            <artifactId>common-feign</artifactId>
         </dependency>
     </dependencies>
 
