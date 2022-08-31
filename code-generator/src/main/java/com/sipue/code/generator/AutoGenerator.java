@@ -28,6 +28,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.zip.ZipOutputStream;
 
 /**
@@ -93,7 +94,7 @@ public class AutoGenerator {
     /**
      * 生成文件
      */
-    public void execute() {
+    public void execute() throws SQLException {
         log.info("==========================准备生成文件...==========================");
         Table table = DBTableQuery.queryTable(connection,globalConfig.getTableName());
 
@@ -109,7 +110,9 @@ public class AutoGenerator {
                 RuntimeUtils.openDir(globalConfig.getOutputDir());
             }
         }catch (Exception e){
-
+            e.printStackTrace();
+        }finally {
+            connection.close();
         }
         log.info("==========================文件生成完成！！！==========================");
     }

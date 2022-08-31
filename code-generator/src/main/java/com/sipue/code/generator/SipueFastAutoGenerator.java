@@ -5,6 +5,7 @@ import com.sipue.code.generator.config.PackageConfig;
 import com.sipue.code.generator.jdbc.DButil;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.function.Consumer;
 
 public final class SipueFastAutoGenerator {
@@ -54,7 +55,7 @@ public final class SipueFastAutoGenerator {
     /**
      * 生成执行方法入口
      */
-    public void execute() {
+    public void execute() throws SQLException {
         new AutoGenerator(this.connection)
                 // 全局配置
                 .global(this.globalConfigBuilder.build())

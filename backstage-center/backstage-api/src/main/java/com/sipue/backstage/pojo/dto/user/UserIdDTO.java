@@ -21,6 +21,6 @@ public class UserIdDTO extends BasePageDTO{
 
     @ApiModelProperty(value = "用户id",required = true)
     @NotEmpty(message = "用户id不能为空")
-    private String userId;
+    private Long userId;
 }
 

@@ -46,5 +46,13 @@ public interface IUserService {
      * @return
      */
     UserEntity getUserByPhone(String phone);
+
+    /**
+     * @Description: 删除用户
+     *
+     * @Author: wangjunyu
+     * @Date: 2022/8/29 15:34
+     */
+    void delUser(Long userId);
 }
 

@@ -133,4 +133,9 @@ public class UserServiceImpl implements IUserService {
         }
         return userEntity;
     }
+
+    @Override
+    public void delUser(Long userId) {
+        userMapper.deleteById(userId);
+    }
 }

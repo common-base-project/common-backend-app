@@ -3,6 +3,7 @@ package com.sipue.backstage.controller;
 
 import com.sipue.backstage.pojo.dto.user.AddUserDTO;
 import com.sipue.backstage.pojo.dto.user.UpdateUserDTO;
+import com.sipue.backstage.pojo.dto.user.UserIdDTO;
 import com.sipue.backstage.pojo.dto.user.UserPageDTO;
 import com.sipue.backstage.pojo.vo.user.UserPageVO;
 import com.sipue.backstage.service.IUserService;
@@ -48,6 +49,13 @@ public class UserController {
     @ApiOperation(value = "编辑用户")
     public Result updateUser(@RequestBody @Validated UpdateUserDTO params){
         userService.updateUser(params);
+        return Result.success();
+    }
+
+    @PostMapping("/user/delete")
+    @ApiOperation(value = "删除用户")
+    public Result delUser(@RequestBody @Validated UserIdDTO params){
+        userService.delUser(params.getUserId());
         return Result.success();
     }
 }

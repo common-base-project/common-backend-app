@@ -1,6 +1,8 @@
 package com.sipue.code.generator;
 
-/** 
+import java.sql.SQLException;
+
+/**
  * @Description: 代码生成启动类
  *
  * 注意：
@@ -23,7 +25,7 @@ public class Generator {
     private static String pwd = "123456";
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         SipueFastAutoGenerator.create(url,user,pwd)
                 //全局设置
                 .globalConfig(builder -> {
