@@ -1,3 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.sipue.common.auth.AuthAutoConfiguration,\
-  com.sipue.common.auth.store.impl.RedisTokenStore

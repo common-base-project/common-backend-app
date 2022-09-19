@@ -1,6 +1,6 @@
 package ${package}.${moduleName}.service;
 
-import com.sipue.common.core.model.BasePageDTO;
+import model.top.mybi.common.core.BasePageDTO;
 import lombok.Getter;
 import lombok.Setter;
 #if(${hasSwagger})

@@ -1,0 +1,23 @@
+package top.mybi.backstage.pojo.dto.user;
+
+import top.mybi.common.core.model.BasePageDTO;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
+
+/**
+ * 分页查询后台用户表请求参数
+ *
+ * @author mustang
+ * @date 2022-07-11 17:05:16
+ */
+@ApiModel("分页查询后台用户表请求参数")
+@Getter
+@Setter
+public class UserPageDTO extends BasePageDTO{
+
+    @ApiModelProperty(value = "搜索值")
+    private String searchVal;
+}
+

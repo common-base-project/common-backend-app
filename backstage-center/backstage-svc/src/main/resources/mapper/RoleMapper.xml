@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.sipue.backstage.mapper.RoleMapper">
+<mapper namespace="top.mybi.backstage.mapper.RoleMapper">
 
-	<!-- 可根据自己的需求，是否要使用 -->
-    <select resultType="com.sipue.backstage.pojo.vo.role.RolePageVO" id="getSysRolePage">
-        select * from sys_role
+    <select resultType="top.mybi.common.core.model.role.RoleVO" id="getUserRoles">
+        SELECT
+            r.role_id,
+            r.role_code,
+            r.role_name,
+            r.role_desc
+        FROM
+            sys_user_role ur
+                LEFT JOIN sys_role r ON ur.role_id = r.role_id
+        where ur.deleted = 1 and r.deleted = 1 and ur.user_id = #{userId}
     </select>
-
 </mapper>

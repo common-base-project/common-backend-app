@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.sipue.backstage.mapper.UserMapper">
+<mapper namespace="top.mybi.backstage.mapper.UserMapper">
 
-    <select resultType="com.sipue.backstage.pojo.vo.user.UserPageVO" id="getSysUserPage">
-        select user_id,user_name,phone,email,`status`,last_login_time from sys_user
+    <select resultType="top.mybi.backstage.pojo.vo.user.UserPageVO" id="getSysUserPage">
+        select
+            user_id,user_name,phone,email,`status`,last_login_time
+        from sys_user
+        WHERE
+            deleted = 1
+            <if test="params.searchVal != null and params.searchVal != ''">
+                and (
+                user_name like concat(concat('%',#{params.searchVal}),'%')
+                or phone like concat(concat('%',#{params.searchVal}),'%')
+                )
+            </if>
+        order by user_id desc
     </select>
 
 </mapper>

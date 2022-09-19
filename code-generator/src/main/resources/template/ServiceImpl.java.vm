@@ -3,15 +3,21 @@ package ${package}.${moduleName}.service.impl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ${package}.${moduleName}.service.${iclassName}Service;
+import ${package}.${moduleName}.entity.${className}Entity;
 import ${package}.${moduleName}.mapper.${className}Mapper;
 import ${package}.${moduleName}.pojo.vo.${tablePackage}.${className}PageVO;
 import ${package}.${moduleName}.pojo.dto.${tablePackage}.${className}PageDTO;
+import ${package}.${moduleName}.pojo.dto.${tablePackage}.Add${className}DTO;
+import ${package}.${moduleName}.pojo.dto.${tablePackage}.Update${className}DTO;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.sipue.common.core.model.BasePageVO;
+import model.top.mybi.common.core.BasePageVO;
+import model.top.mybi.common.core.CommonErrorCode;
+import exception.top.mybi.common.core.ServiceException;
 import org.springframework.beans.BeanUtils;
 
 import javax.annotation.Resource;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * ${comments}接口实现类
@@ -34,6 +40,31 @@ public class ${className}ServiceImpl implements ${iclassName}Service {
         BasePageVO<${className}PageVO> pageVO = new BasePageVO<>();
         BeanUtils.copyProperties(page, pageVO);
         return pageVO;
+    }
+
+    @Override
+    public void add${className}(Add${className}DTO params) {
+        ${className}Entity entity = params.covertBean(${className}Entity.class);
+        ${tablePackage}Mapper.insert(entity);
+    }
+
+    @Override
+    public void update${className}(Update${className}DTO params) {
+        ${className}Entity oldEntity = ${tablePackage}Mapper.selectById(params.get${pk.attrName}());
+        if(Objects.isNull(oldEntity)){
+            throw new ServiceException(CommonErrorCode.VALIDATE_CODE_ERROR);
+        }
+        ${className}Entity entity = params.covertBean(${className}Entity.class);
+        ${tablePackage}Mapper.updateById(entity);
+    }
+
+    @Override
+    public void delete${className}(Long ${pk.columnJavaName}) {
+        ${className}Entity entity = ${tablePackage}Mapper.selectById(${pk.columnJavaName});
+        if(Objects.isNull(entity)){
+            throw new ServiceException(CommonErrorCode.VALIDATE_CODE_ERROR);
+        }
+        ${tablePackage}Mapper.deleteById(entity);
     }
 
 }

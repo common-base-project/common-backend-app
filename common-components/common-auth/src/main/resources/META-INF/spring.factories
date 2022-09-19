@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  top.mybi.common.auth.AuthAutoConfiguration,\
+  top.mybi.common.auth.store.impl.RedisTokenStore

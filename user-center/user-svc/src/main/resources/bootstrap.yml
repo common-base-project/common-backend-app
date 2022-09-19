@@ -1,7 +1,9 @@
 server:
-  port: 8002
+  port: 9002
 
 spring:
   application:
     name: user-center
+  profiles:
+    active: dev
 

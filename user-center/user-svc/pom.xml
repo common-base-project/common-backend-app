@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>user-center</artifactId>
-        <groupId>com.sipue</groupId>
+        <groupId>top.mybi</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -16,33 +16,25 @@
     <dependencies>
         <!-- 日志配置 -->
         <dependency>
-            <groupId>com.sipue</groupId>
+            <groupId>top.mybi</groupId>
             <artifactId>common-log</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.sipue</groupId>
+            <groupId>top.mybi</groupId>
             <artifactId>common-mybatis</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.sipue</groupId>
+            <groupId>top.mybi</groupId>
             <artifactId>common-redis</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.sipue</groupId>
-            <artifactId>common-job</artifactId>
-        </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.sipue</groupId>-->
-<!--            <artifactId>common-rabbitmq</artifactId>-->
-<!--        </dependency>-->
-        <dependency>
-            <groupId>com.sipue</groupId>
+            <groupId>top.mybi</groupId>
             <artifactId>common-auth</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.sipue</groupId>
-            <artifactId>backstage-api</artifactId>
+            <groupId>top.mybi</groupId>
+            <artifactId>user-api</artifactId>
         </dependency>
 
         <dependency>

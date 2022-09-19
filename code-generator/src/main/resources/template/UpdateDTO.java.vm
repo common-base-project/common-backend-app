@@ -1,0 +1,41 @@
+package ${package}.${moduleName}.service;
+
+import model.top.mybi.common.core.BaseModel;
+import lombok.Getter;
+import lombok.Setter;
+#if(${hasSwagger})
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+#end
+#if(${hasBigDecimal})
+import java.math.BigDecimal;
+#end
+#if(${hasDateTime})
+import java.time.LocalDateTime;
+#end
+#if(${hasDate})
+import java.time.LocalDate;
+#end
+
+
+/**
+ * 修改${comments}请求参数
+ *
+ * @author ${author}
+ * @date ${datetime}
+ */
+#if(${hasSwagger})
+@ApiModel("修改${comments}请求参数")
+#end
+@Getter
+@Setter
+public class Update${className}DTO extends BaseModel{
+#foreach ($column in $columns)
+#if(${hasSwagger})
+
+    @ApiModelProperty("$column.comments")
+#end
+    private $column.attrType $column.columnJavaName;
+#end
+}
+

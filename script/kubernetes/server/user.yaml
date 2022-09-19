@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: user-svc
-  namespace: sipue-cloud
+  namespace: mybi-cloud
   labels:
     app: user-svc
 spec:
@@ -17,19 +17,19 @@ spec:
     metadata:
       labels:
         app: user-svc
-        env: prod
+        env: dev
     spec:
       imagePullSecrets:
         - name: registry-secret
       containers:
         - name: user-svc
-          image: registry-vpc.cn-beijing.aliyuncs.com/wangjunyu/user-svc:v1.0.0
+          image: registry-vpc.cn-beijing.aliyuncs.com/mustang/user-svc:v1.0.0
           imagePullPolicy: Always
           env:
             - name: SPRING_PROFILES_ACTIVE
-              value: prod
+              value: dev
           ports:
-            - containerPort: 8001
+            - containerPort: 8002
           volumeMounts:
             - name: time-config
               mountPath: /etc/localtime
@@ -45,15 +45,15 @@ apiVersion: v1
 kind: Service
 metadata:
   name: user-service
-  namespace: sipue-cloud
+  namespace: mybi-cloud
 spec:
   selector:
     app: user-svc
-    env: prod
+    env: dev
   ports:
     - protocol: TCP
-      port: 8001
-      targetPort: 8001
+      port: 8002
+      targetPort: 8002
   #    nodePort: 30003
   #  type: NodePort
   clusterIP: None

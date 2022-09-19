@@ -2,8 +2,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sipue-gateway
-  namespace: sipue-cloud
+  name: mybi-gateway
+  namespace: mybi-cloud
   labels:
     app: gateway
 spec:
@@ -17,17 +17,17 @@ spec:
     metadata:
       labels:
         app: gateway
-        env: prod
+        env: dev
     spec:
       imagePullSecrets:
         - name: registry-secret
       containers:
-        - name: sipue-gateway
-          image: registry-vpc.cn-beijing.aliyuncs.com/wangjunyu/sipue-gateway:v1.0.0
+        - name: mybi-gateway
+          image: registry-vpc.cn-beijing.aliyuncs.com/mustang/mybi-gateway:v1.0.0
           imagePullPolicy: Always
           env:
             - name: SPRING_PROFILES_ACTIVE
-              value: prod
+              value: dev
           ports:
             - containerPort: 8000
           volumeMounts:
@@ -45,11 +45,11 @@ apiVersion: v1
 kind: Service
 metadata:
   name: gateway-service
-  namespace: sipue-cloud
+  namespace: mybi-cloud
 spec:
   selector:
     app: gateway
-    env: prod
+    env: dev
   ports:
     - protocol: TCP
       port: 80

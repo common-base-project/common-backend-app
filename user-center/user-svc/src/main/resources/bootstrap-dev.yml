@@ -7,17 +7,35 @@ spring:
       datasource:
         #指定多个数据源链接信息 名称可自己指定
         db_user:
-          url: jdbc:mysql://111.229.150.34:3306/db_user?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+          url: jdbc:mysql://127.0.0.1:3306/db_commonUser?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
           username: root
-          password: 123456
+          password: mustang
           driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
-    host: 111.229.150.34
+    host: 127.0.0.1
     port: 6379
-    password: sipue@2022
-    database: 10
+    database: 1
+    password: mustang
   main:
     allow-bean-definition-overriding: true # 允许bean覆盖
+  rabbitmq:
+    host: 111.229.150.34
+    #    port: 5672
+    username: guest
+    password: 123456
+    virtual-host: wjy_vhost
+    # 消息发送确认
+    publisher-confirm-type: correlated
+    # 开启发送失败退回
+    publisher-returns: true
+    listener:
+      simple:
+        # 消费端最小并发数
+        concurrency: 1
+        # 消费端最大并发数
+        max-concurrency: 5
+        # 一次请求中预处理的消息数量
+        prefetch: 2
 
 ##### spring-boot-actuator(健康检查)配置
 management:
@@ -35,7 +53,7 @@ logging:
 
 ### 项目定制配置
 ##### 是否开启请求日志记录
-sipue:
+mybi:
   common:
     request:
       log:
@@ -48,6 +66,14 @@ sipue:
       expire: 86400
       #刷新token的过期时间 一个月 单位:秒
       refresh-expire: 2592000
+    rabbitmq:
+      modules:
+        - queue:
+            name: mybi.test.queue
+            routing-key: mybi.test.route
+          exchange:
+            name: mybi.test.exchange
+            type: DIRECT
   api:
     backstage: http://localhost:8001
     #backstage: http://backstage-svc:8001
@@ -55,7 +81,7 @@ sipue:
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.sipue.*.entity
+  typeAliasesPackage: top.mybi.*.entity
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
@@ -90,3 +116,13 @@ swagger:
 #分布式事务，暂时关闭
 seata:
   enabled: false
+
+#xxl-job
+xxl:
+  job:
+    admin:
+      addresses: http://localhost:5004
+    executor:
+      #执行器端口，推荐服务端口+1000
+      port: 10002
+      address: http://localhost

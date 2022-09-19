@@ -15,6 +15,7 @@ bin/
 
 ### IntelliJ IDEA ###
 .idea
+.vscode
 *.iws
 *.iml
 *.ipr
