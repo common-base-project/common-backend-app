@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: sipue-gateway
+    name: mybi-gateway
   profiles:
     active: dev
 

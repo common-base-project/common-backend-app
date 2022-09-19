@@ -53,7 +53,7 @@ logging:
 
 ### 项目定制配置
 ##### 是否开启请求日志记录
-sipue:
+mybi:
   common:
     request:
       log:
@@ -69,10 +69,10 @@ sipue:
     rabbitmq:
       modules:
         - queue:
-            name: sipue.test.queue
-            routing-key: sipue.test.route
+            name: mybi.test.queue
+            routing-key: mybi.test.route
           exchange:
-            name: sipue.test.exchange
+            name: mybi.test.exchange
             type: DIRECT
   api:
     backstage: http://localhost:8001
@@ -81,7 +81,7 @@ sipue:
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.sipue.*.entity
+  typeAliasesPackage: top.mybi.*.entity
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:

@@ -10,9 +10,9 @@ import ${package}.${moduleName}.pojo.dto.${tablePackage}.${className}PageDTO;
 import ${package}.${moduleName}.pojo.dto.${tablePackage}.Add${className}DTO;
 import ${package}.${moduleName}.pojo.dto.${tablePackage}.Update${className}DTO;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.sipue.common.core.model.BasePageVO;
-import com.sipue.common.core.model.CommonErrorCode;
-import com.sipue.common.core.exception.ServiceException;
+import model.top.mybi.common.core.BasePageVO;
+import model.top.mybi.common.core.CommonErrorCode;
+import exception.top.mybi.common.core.ServiceException;
 import org.springframework.beans.BeanUtils;
 
 import javax.annotation.Resource;

@@ -3,13 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>sipue-cloud</artifactId>
-        <groupId>com.sipue</groupId>
+        <artifactId>common-base-cloud</artifactId>
+        <groupId>top.mybi</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>sipue-gateway</artifactId>
+    <artifactId>common-gateway</artifactId>
     <packaging>jar</packaging>
     <description>服务网关</description>
 
@@ -21,16 +21,16 @@
     <dependencies>
         <!-- 日志配置 -->
         <dependency>
-            <groupId>com.sipue</groupId>
+            <groupId>top.mybi</groupId>
             <artifactId>common-log</artifactId>
         </dependency>
         <!-- 核心包 -->
         <dependency>
-            <groupId>com.sipue</groupId>
+            <groupId>top.mybi</groupId>
             <artifactId>common-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.sipue</groupId>
+            <groupId>top.mybi</groupId>
             <artifactId>common-auth</artifactId>
         </dependency>
 

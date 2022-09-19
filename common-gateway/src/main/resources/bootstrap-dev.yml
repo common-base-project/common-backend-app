@@ -37,7 +37,7 @@ swagger:
   try-host: /api/gateway
 
 
-sipue:
+mybi:
   common:
     request:
       log:

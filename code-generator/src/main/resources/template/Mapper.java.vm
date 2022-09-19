@@ -2,7 +2,7 @@ package ${package}.${moduleName}.dao;
 
 import ${package}.${moduleName}.entity.${className}Entity;
 import ${package}.${moduleName}.pojo.vo.${tablePackage}.${className}PageVO;
-import com.sipue.common.mybatis.mapper.CommonMapper;
+import mapper.top.mybi.common.mybatis.CommonMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.ibatis.annotations.Param;

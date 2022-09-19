@@ -35,7 +35,7 @@ logging:
 
 ### 项目定制配置
 ##### 是否开启请求日志记录
-sipue:
+mybi:
   common:
     request:
       log:
@@ -55,7 +55,7 @@ sipue:
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.sipue.*.entity
+  typeAliasesPackage: top.mybi.*.entity
   global-config:
     db-config:
       id-type: auto

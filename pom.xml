@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.sipue</groupId>
-    <artifactId>sipue-cloud</artifactId>
+    <groupId>top.mybi</groupId>
+    <artifactId>common-base-cloud</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
 
     <modules>
-        <module>common-component</module>
+        <module>common-components</module>
         <module>common-gateway</module>
         <module>user-center</module>
         <module>backstage-center</module>
@@ -177,55 +177,55 @@
 
             <!-- 公共日志组件 -->
             <dependency>
-                <groupId>com.sipue</groupId>
+                <groupId>top.mybi</groupId>
                 <artifactId>common-log</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <!-- 公共核心包 -->
             <dependency>
-                <groupId>com.sipue</groupId>
+                <groupId>top.mybi</groupId>
                 <artifactId>common-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <!-- mybatis通用配置 -->
             <dependency>
-                <groupId>com.sipue</groupId>
+                <groupId>top.mybi</groupId>
                 <artifactId>common-mybatis</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <!-- swagger通用配置 -->
             <dependency>
-                <groupId>com.sipue</groupId>
+                <groupId>top.mybi</groupId>
                 <artifactId>common-swagger</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.sipue</groupId>
+                <groupId>top.mybi</groupId>
                 <artifactId>common-redis</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.sipue</groupId>
+                <groupId>top.mybi</groupId>
                 <artifactId>common-auth</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.sipue</groupId>
+                <groupId>top.mybi</groupId>
                 <artifactId>common-rabbitmq</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.sipue</groupId>
+                <groupId>top.mybi</groupId>
                 <artifactId>common-job</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.sipue</groupId>
+                <groupId>top.mybi</groupId>
                 <artifactId>common-feign</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -233,12 +233,12 @@
             <!-- *********************************** api包 ************************************** -->
             <!-- 项目api包 -->
             <dependency>
-                <groupId>com.sipue</groupId>
+                <groupId>top.mybi</groupId>
                 <artifactId>user-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.sipue</groupId>
+                <groupId>top.mybi</groupId>
                 <artifactId>backstage-api</artifactId>
                 <version>${project.version}</version>
             </dependency>

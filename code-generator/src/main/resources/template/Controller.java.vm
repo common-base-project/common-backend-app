@@ -1,8 +1,8 @@
 package ${package}.${moduleName}.service;
 
 
-import com.sipue.common.core.model.BasePageVO;
-import com.sipue.common.core.model.Result;
+import model.top.mybi.common.core.BasePageVO;
+import model.top.mybi.common.core.Result;
 import ${package}.${moduleName}.service.${iclassName}Service;
 import ${package}.${moduleName}.pojo.vo.${tablePackage}.${className}PageVO;
 import ${package}.${moduleName}.pojo.dto.${tablePackage}.${className}PageDTO;

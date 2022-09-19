@@ -1,6 +1,6 @@
 package ${package}.${moduleName}.entity;
 
-import com.sipue.common.mybatis.entity.LogicDeleteBaseEntity;
+import entity.top.mybi.common.mybatis.LogicDeleteBaseEntity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;

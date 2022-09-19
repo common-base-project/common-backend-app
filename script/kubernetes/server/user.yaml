@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: user-svc
-  namespace: sipue-cloud
+  namespace: mybi-cloud
   labels:
     app: user-svc
 spec:
@@ -45,7 +45,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: user-service
-  namespace: sipue-cloud
+  namespace: mybi-cloud
 spec:
   selector:
     app: user-svc

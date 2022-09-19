@@ -1,7 +1,7 @@
 package ${package}.${moduleName}.service;
 
 
-import com.sipue.common.core.model.BasePageVO;
+import model.top.mybi.common.core.BasePageVO;
 import ${package}.${moduleName}.pojo.vo.${tablePackage}.${className}PageVO;
 import ${package}.${moduleName}.pojo.dto.${tablePackage}.${className}PageDTO;
 import ${package}.${moduleName}.pojo.dto.${tablePackage}.Add${className}DTO;

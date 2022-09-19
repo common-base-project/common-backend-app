@@ -24,7 +24,7 @@
 
 ```lua
 common-backend-cloud
-├── sipue-common -- 系统公共模块
+├── common-component -- 系统公共模块
      ├── common-auth -- 授权
      ├── common-core -- 公共工具类核心包
      ├── common-feign -- 服务间远程调用
@@ -34,11 +34,11 @@ common-backend-cloud
      ├── common-rabbitmq -- rabbitmq 扩展封装
      ├── common-redis -- redis 扩展封装
      ├── common-swagger -- 接口文档
-├── sipue-gateway -- 网关服务[8000]
-├── sipue-visual -- 网关服务
-     └── sipue-xxl-job-admim -- 分布式定时任务管理台 [5004]
-     └── sipue-monitor -- 服务监控
-     └── sipue-sentinel-dashboard -- 流量高可用
+├── common-gateway -- 网关服务[8000]
+├── common-visual -- 网关服务
+     └── common-xxl-job-admim -- 分布式定时任务管理台 [5004]
+     └── common-monitor -- 服务监控
+     └── common-sentinel-dashboard -- 流量高可用
 └── backstage-center -- 运维后台
      └── backstage-api -- 运维后台api模块
      └── backstage-svc -- 后台系统业务处理模块[8001]

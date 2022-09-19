@@ -9,12 +9,12 @@ spring:
         db_user:
           url: jdbc:mysql://mysql:3306/db_user?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
           username: root
-          password: sipue@2022
+          password: mustang
           driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
     host: 111.229.150.34
     port: 6379
-    password: sipue@2022
+    password: mustang
     database: 10
   main:
     allow-bean-definition-overriding: true # 允许bean覆盖
@@ -35,7 +35,7 @@ logging:
 
 ### 项目定制配置
 ##### 是否开启请求日志记录
-sipue:
+mybi:
   common:
     request:
       log:
@@ -54,7 +54,7 @@ sipue:
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.sipue.*.entity
+  typeAliasesPackage: top.mybi.*.entity
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
