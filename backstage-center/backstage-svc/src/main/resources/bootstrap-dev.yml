@@ -7,14 +7,15 @@ spring:
       datasource:
         #指定多个数据源链接信息 名称可自己指定
         db_backstage:
-          url: jdbc:mysql://localhost:3306/db_backstage?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+          url: jdbc:mysql://localhost:3306/db_adminCloud?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
           username: root
-          password: 123456
+          password: mustang
           driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
     host: 127.0.0.1
     port: 6379
     database: 10
+    password: mustang
   main:
     allow-bean-definition-overriding: true # 允许bean覆盖
 

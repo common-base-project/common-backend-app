@@ -7,7 +7,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 /**
  * 认证服务端 属性
  *
- * @author wangjunyu
+ * @author mustang
  * @date 2022/07/02
  */
 @Data

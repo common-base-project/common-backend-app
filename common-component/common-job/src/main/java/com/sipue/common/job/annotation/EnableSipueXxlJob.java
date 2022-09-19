@@ -8,7 +8,7 @@ import java.lang.annotation.*;
 /**
  * 激活xxl-job配置
  *
- * @author wangjunyu
+ * @author mustang
  * @date 2022/7/18
  */
 @Target({ ElementType.TYPE })

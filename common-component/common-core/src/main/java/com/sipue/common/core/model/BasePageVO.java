@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * @Description 基础分页响应参数
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月22日18:08:43
  * @Version 1.0
  */

@@ -5,7 +5,7 @@ import lombok.Getter;
 
 /**
  * @Description 逻辑删除标志
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月22日18:11:06
  * @Version 1.0
  */

@@ -8,7 +8,7 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022/2/7 15:40
  */
 @Slf4j

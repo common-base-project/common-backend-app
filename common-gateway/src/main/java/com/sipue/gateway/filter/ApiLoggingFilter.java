@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * @author wangjunyu
+ * @author mustang
  * <p>
  * 全局拦截器，作用所有的微服务
  * <p>

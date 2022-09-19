@@ -9,7 +9,7 @@ import lombok.Setter;
 /**
  * 角色表响应
  *
- * @author wangjunyu
+ * @author mustang
  * @date 2022-07-12 18:12:55
  */
 @ApiModel("角色表响应")

@@ -6,7 +6,7 @@ import java.security.Security;
 
 /**
  * @description:DES加密和解密工具,可以对字符串进行加密和解密操作  。
- * @Author wangjunyu
+ * @Author mustang
  */
 public class DesUtil {
 
@@ -173,7 +173,7 @@ public class DesUtil {
 
     /**
      * main方法  。
-     * @author wangjunyu
+     * @author mustang
      * @param args
      */
     public static void main(String[] args) {

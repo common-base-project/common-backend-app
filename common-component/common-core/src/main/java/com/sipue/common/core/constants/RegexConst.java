@@ -2,7 +2,7 @@ package com.sipue.common.core.constants;
 
 /**
  * @Description 常用正则表达式
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月28日18:57:07
  * @Version 1.0
  */

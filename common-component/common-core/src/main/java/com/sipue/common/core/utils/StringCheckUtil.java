@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 /**
  * @description:
- * @author: wangjunyu
+ * @author: mustang
  */
 public class StringCheckUtil {
 

@@ -7,7 +7,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import java.util.List;
 
 /**
- * @author wangjunyu
+ * @author mustang
  * <p>
  * 网关配置文件
  */

@@ -1,11 +1,12 @@
 #服务id小写
 spring:
   redis:
-    host: localhost
+    host: 127.0.0.1
     port: 6379
     database: 10
     main:
       allow-bean-definition-overriding: true # 允许bean覆盖
+    password: mustang
   cloud:
     gateway:
       discovery:

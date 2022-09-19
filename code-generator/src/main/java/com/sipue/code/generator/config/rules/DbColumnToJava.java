@@ -21,7 +21,7 @@ import lombok.Getter;
 /**
  * @Description: 表字段类型与java对应关系
  *
- * @Author: wangjunyu
+ * @Author: mustang
  * @Date: 2021/12/30 10:34
  */
 @AllArgsConstructor

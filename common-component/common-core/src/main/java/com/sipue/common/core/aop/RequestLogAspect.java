@@ -19,7 +19,7 @@ import java.util.Objects;
 
 /**
  * @Description 请求参数日志打印拦截器
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月25日10:49:37
  * @Version 1.0
  */

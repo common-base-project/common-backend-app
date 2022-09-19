@@ -7,7 +7,7 @@ import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022/1/20 18:59
  */
 @Deprecated

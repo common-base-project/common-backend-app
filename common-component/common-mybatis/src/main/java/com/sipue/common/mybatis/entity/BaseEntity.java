@@ -10,17 +10,17 @@ import java.time.LocalDateTime;
 
 
 /**
- * @Author wangjunyu
+ * @Author mustang
  */
 @Getter
 @Setter
 public class BaseEntity extends BaseModel {
 
-    /**
-     * 创建人员
-     */
-    @TableField(value = "creator",fill = FieldFill.INSERT)
-    private Long creator;
+    ///**
+    // * 创建人员
+    // */
+    //@TableField(value = "creator",fill = FieldFill.INSERT)
+    //private Long creator;
 
     /**
      * 创建时间
@@ -28,11 +28,11 @@ public class BaseEntity extends BaseModel {
     @TableField(value = "create_time")
     private LocalDateTime createTime;
 
-    /**
-     * 最后一次修改人员
-     */
-    @TableField(value = "modifier",fill = FieldFill.INSERT_UPDATE)
-    private Long modifier;
+    ///**
+    // * 最后一次修改人员
+    // */
+    //@TableField(value = "modifier",fill = FieldFill.INSERT_UPDATE)
+    //private Long modifier;
 
     /**
      * 更新时间

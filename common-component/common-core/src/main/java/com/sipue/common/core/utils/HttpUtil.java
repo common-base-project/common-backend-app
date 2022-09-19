@@ -12,7 +12,7 @@ import java.io.IOException;
 
 /**
  * @Description HTTP工具类
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月28日12:53:15
  * @Version 1.0
  */

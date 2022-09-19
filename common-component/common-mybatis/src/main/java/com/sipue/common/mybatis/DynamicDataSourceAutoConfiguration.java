@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * 动态数据源切换配置
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022-10-28 17:49
  */
 

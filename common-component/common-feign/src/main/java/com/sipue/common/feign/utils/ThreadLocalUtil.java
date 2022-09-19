@@ -4,7 +4,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 /**
  * @Desc
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022/4/6 10:36
  */
 public class ThreadLocalUtil {

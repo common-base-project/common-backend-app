@@ -7,7 +7,7 @@ import com.sipue.common.core.model.Result;
 
 /**
  * @Desc
- * @Author wangjunyu
+ * @Author mustang
  */
 public class ResultCodeUtil {
     /**

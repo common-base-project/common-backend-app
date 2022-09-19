@@ -13,7 +13,7 @@ import org.springframework.util.StringUtils;
 /**
  * xxl-job自动装配
  *
- * @author wangjunyu
+ * @author mustang
  * @date 2022/7/18
  */
 @Configuration(proxyBeanMethods = false)

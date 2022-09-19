@@ -23,7 +23,7 @@ spec:
         - name: registry-secret
       containers:
         - name: sipue-gateway
-          image: registry-vpc.cn-beijing.aliyuncs.com/wangjunyu/sipue-gateway:v1.0.0
+          image: registry-vpc.cn-beijing.aliyuncs.com/mustang/sipue-gateway:v1.0.0
           imagePullPolicy: Always
           env:
             - name: SPRING_PROFILES_ACTIVE

@@ -5,7 +5,7 @@ import java.text.DecimalFormat;
 
 /**
  * 金额工具
- * @Author wangjunyu
+ * @Author mustang
  * @version 1.0
  */
 public class AmountUtil {

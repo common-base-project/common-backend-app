@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.core.config.GlobalConfig;
 import com.sipue.common.mybatis.enums.LogicDelete;
 
 /**
- * @Author wangjunyu
+ * @Author mustang
  */
 public class MybatisPlusCustomizerConfig implements MybatisPlusPropertiesCustomizer {
     private static IdType idType = IdType.ASSIGN_ID;

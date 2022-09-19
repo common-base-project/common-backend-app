@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 /**
  * @Description: 权限认证：必须具有指定权限才能进入该方法
  *
- * @Author: wangjunyu
+ * @Author: mustang
  * @Date: 2022/8/17 14:09
  */
 public @interface RequiresPermissions {

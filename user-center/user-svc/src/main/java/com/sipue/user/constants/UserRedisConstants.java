@@ -3,7 +3,7 @@ package com.sipue.user.constants;
 import static com.sipue.common.core.constants.RedisConstants.USER_CENTER_KEY;
 
 /**
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022/1/20 14:51
  */
 public interface UserRedisConstants {

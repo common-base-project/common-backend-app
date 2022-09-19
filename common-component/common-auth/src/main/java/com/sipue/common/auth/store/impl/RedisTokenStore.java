@@ -23,7 +23,7 @@ import java.util.UUID;
 
 /**
  * @Description 基于Redis的令牌存储方式
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月28日10:39:59
  * @Version 1.0
  */

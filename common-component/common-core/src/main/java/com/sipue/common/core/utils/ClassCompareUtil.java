@@ -10,7 +10,7 @@ import java.util.*;
 
 /**
  * 类（对象）比较工具类
- * @Author wangjunyu
+ * @Author mustang
  * @version 1.0
  */
 @Slf4j

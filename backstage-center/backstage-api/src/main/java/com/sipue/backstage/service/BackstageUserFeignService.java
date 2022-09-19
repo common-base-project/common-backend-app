@@ -17,7 +17,7 @@ public class BackstageUserFeignService {
     /**
      * @Description: 批量查询用户信息
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      * @Date: 2022/7/22 14:21
      */
     public BasePageVO<UserPageVO> getUserListByIds(UserPageDTO params){

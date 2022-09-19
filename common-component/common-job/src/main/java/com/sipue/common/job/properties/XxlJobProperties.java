@@ -7,7 +7,7 @@ import org.springframework.boot.context.properties.NestedConfigurationProperty;
 /**
  * xxl-job配置
  *
- * @author wangjunyu
+ * @author mustang
  * @date 2022/7/18
  */
 @Data

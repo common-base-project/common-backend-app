@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 /**
  * 新增用户请求参数
  *
- * @author wangjunyu
+ * @author mustang
  * @date 2022-08-22 16:55:22
  */
 @ApiModel("新增用户请求参数")

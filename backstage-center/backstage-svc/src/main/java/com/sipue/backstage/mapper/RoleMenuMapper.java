@@ -6,7 +6,7 @@ import com.sipue.common.mybatis.mapper.CommonMapper;
 /**
  * 角色菜单表Mapper
  * 
- * @author wangjunyu
+ * @author mustang
  * @date 2022-07-12 18:12:55
  */
 public interface RoleMenuMapper extends CommonMapper<RoleMenuEntity> {

@@ -8,7 +8,7 @@ import lombok.Setter;
 
 /**
  * @Description 逻辑删除基础实体
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月27日18:26:26
  * @Version 1.0
  */

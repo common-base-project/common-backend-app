@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 角色表Mapper
  * 
- * @author wangjunyu
+ * @author mustang
  * @date 2022-07-12 18:12:55
  */
 public interface RoleMapper extends BaseMapper<RoleEntity> {
@@ -18,7 +18,7 @@ public interface RoleMapper extends BaseMapper<RoleEntity> {
     /**
      * @Description: 查询角色列表
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      * @Date: 2022/8/1 10:12
      */
     List<RoleVO> getUserRoles(@Param("userId") Long userId);

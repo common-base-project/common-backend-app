@@ -9,7 +9,7 @@ import java.util.zip.ZipOutputStream;
 
 /**
  * 将目录文件压缩成文件夹
- * @Author wangjunyu
+ * @Author mustang
  */
 public class CompressUtil {
     /**

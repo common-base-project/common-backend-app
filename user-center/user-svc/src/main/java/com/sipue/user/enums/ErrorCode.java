@@ -8,7 +8,7 @@ import lombok.Getter;
 /**
  * @Description: 用户中心错误码100000-109999
  *
- * @Author: wangjunyu
+ * @Author: mustang
  * @Date: 2022/7/7 16:34
  */
 @Getter

@@ -7,7 +7,7 @@ import org.springframework.util.StringUtils;
 /**
  * @Description: 全局配置
  *
- * @Author: wangjunyu
+ * @Author: mustang
  * @Date: 2021/12/30 15:09
  */
 @Data
@@ -29,7 +29,7 @@ public class GlobalConfig {
     /**
      * 作者
      */
-    private String author = "wangjunyu";
+    private String author = "mustang";
 
 
     /**
@@ -46,7 +46,7 @@ public class GlobalConfig {
     /**
      * @Description: 全局配置构建
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      * @Date: 2021/12/30 15:22
      */
     public static class Builder implements IConfigBuilder<GlobalConfig> {

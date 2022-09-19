@@ -7,7 +7,7 @@ import java.io.InputStream;
 
 /**
  * @Desc
- * @Author wangjunyu
+ * @Author mustang
  */
 public class Base64Util {
     public static String Img2Base64(InputStream in){

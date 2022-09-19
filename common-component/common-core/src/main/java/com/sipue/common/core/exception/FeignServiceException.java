@@ -8,7 +8,7 @@ import lombok.Setter;
 
 /**
  * @Description 自定义业务服务错误
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月22日17:32:40
  * @Version 1.0
  */

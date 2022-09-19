@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 此类注意是为filter注入feign接口使用
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022/1/26 15:45
  */
 //@Component

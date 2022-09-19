@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * 用户中心服务
- * @Author wangjunyu
+ * @Author mustang
  */
 @EnableFeign
 @SpringBootApplication(scanBasePackages = {"com.sipue.user"})

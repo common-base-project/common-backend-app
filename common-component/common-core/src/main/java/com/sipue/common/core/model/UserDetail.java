@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * @Description 当前用户信息
  * 用户访问接口时，由网关根据token放入请求头中
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月28日13:38:10
  * @Version 1.0
  */

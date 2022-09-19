@@ -16,7 +16,7 @@ import static com.sipue.common.core.model.CommonErrorCode.REQUEST_APPID_EMPTY_OR
 
 /**
  * @Description 客户端信息
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月05日15:34:18
  * @Version 1.0
  */

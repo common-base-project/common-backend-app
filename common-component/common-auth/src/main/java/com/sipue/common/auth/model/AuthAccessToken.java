@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 /**
  * @Description 登录令牌信息
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月28日10:46:381
  * @Version 1.0
  */

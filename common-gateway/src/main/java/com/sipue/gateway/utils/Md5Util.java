@@ -9,7 +9,7 @@ import java.util.Objects;
 
 /**
  * HttpSign加密
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022/1/24 15:27
  */
 public class Md5Util {

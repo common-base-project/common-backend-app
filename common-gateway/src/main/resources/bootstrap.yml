@@ -4,4 +4,6 @@ server:
 spring:
   application:
     name: sipue-gateway
+  profiles:
+    active: dev
 

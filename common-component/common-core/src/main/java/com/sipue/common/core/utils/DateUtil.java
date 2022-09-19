@@ -18,7 +18,7 @@ import java.util.TimeZone;
 
 /**
  * 日期工具
- * @Author wangjunyu
+ * @Author mustang
  * @version 1.0
  */
 public class DateUtil {
@@ -93,7 +93,7 @@ public class DateUtil {
 	/**
 	 * @Description: 时间戳转日期
 	 *
-	 * @Author: wangjunyu
+	 * @Author: mustang
 	 */
 	public static LocalDateTime toLocalDateTime(Long timestamp){
 		if (timestamp == 0)

@@ -12,7 +12,7 @@ import static com.sipue.common.core.constants.RegexConstants.PHONE_REGEX;
 
 /**
  * @Description 手机号码规则验证
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月22日17:26:15
  * @Version 1.0
  */

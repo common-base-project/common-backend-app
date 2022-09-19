@@ -3,7 +3,7 @@ package com.sipue.code.generator.config.rules;
 /**
  * @Description: 数据库时间类型 到 实体类时间类型 对应策略
  *
- * @Author: wangjunyu
+ * @Author: mustang
  * @Date: 2021/12/30 10:33
  */
 public enum DateType {

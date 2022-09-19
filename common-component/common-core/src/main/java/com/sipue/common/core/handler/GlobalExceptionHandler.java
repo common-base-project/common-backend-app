@@ -28,7 +28,7 @@ import java.util.Set;
 
 /**
  * 全局异常处理器结合sentinel 全局异常处理器不能作用在 oauth server
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022-11-15
  */
 @Slf4j

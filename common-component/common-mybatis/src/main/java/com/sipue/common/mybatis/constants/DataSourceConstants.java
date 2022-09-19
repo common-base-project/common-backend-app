@@ -2,7 +2,7 @@ package com.sipue.common.mybatis.constants;
 
 /**
  * 数据源相关常量
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022/10/28 18:07
  */
 public interface DataSourceConstants {

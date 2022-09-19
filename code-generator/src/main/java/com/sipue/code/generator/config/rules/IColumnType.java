@@ -18,7 +18,7 @@ package com.sipue.code.generator.config.rules;
 /**
  * @Description: 获取实体类字段属性类信息接口
  *
- * @Author: wangjunyu
+ * @Author: mustang
  * @Date: 2021/12/30 10:34
  */
 public interface IColumnType {

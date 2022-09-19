@@ -2,7 +2,7 @@ package com.sipue.common.redis.constant;
 
 /**
  * Redis Key 前缀常量
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022年6月12日16:18:27
  * @version 1.0
  */

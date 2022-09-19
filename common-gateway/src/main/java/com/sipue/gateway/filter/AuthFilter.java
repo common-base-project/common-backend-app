@@ -35,7 +35,7 @@ import java.util.function.Consumer;
 
 /**
  * 权限拦截器
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022/1/25 18:17
  */
 @Slf4j

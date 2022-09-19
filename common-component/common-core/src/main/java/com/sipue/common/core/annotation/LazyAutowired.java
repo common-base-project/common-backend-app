@@ -7,7 +7,7 @@ import java.lang.annotation.*;
 
 /**
  * 整合 @lazy和@Autowired(required=false)
- * @Author wangjunyu
+ * @Author mustang
  * @date
  * @version 1.0
  */

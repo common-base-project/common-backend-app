@@ -6,4 +6,6 @@ spring:
     name: xxl-job-admin
   servlet:
     context-path: /xxl-job-admin
+  profiles:
+    active: dev
 

@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * mybatis plus 统一配置
- * @Author wangjunyu
+ * @Author mustang
  */
 @Configuration(proxyBeanMethods = false)
 public class MybatisAutoConfiguration implements WebMvcConfigurer {

@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 /**
  * 菜单id请求参数
  *
- * @author wangjunyu
+ * @author mustang
  * @date 2022-07-11 15:10:17
  */
 @ApiModel("菜单id请求参数")

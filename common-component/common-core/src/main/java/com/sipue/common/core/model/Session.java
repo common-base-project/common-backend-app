@@ -16,7 +16,7 @@ import java.net.URLDecoder;
 
 /**
  * 当前请求信息
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022/1/25 9:46
  */
 public class Session {
@@ -24,7 +24,7 @@ public class Session {
     /**
      * @Description: 获取请求ip
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      */
     public static String getRequestIp() {
         String requestIp = HttpUtil.getHeader(HeaderConstants.REQUEST_IP);
@@ -128,7 +128,7 @@ public class Session {
     /**
      * @Description: 判断是否存在当前用户header
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      * @Date: 2022/6/9 14:23
      */
     public static boolean currentUserHeader() {

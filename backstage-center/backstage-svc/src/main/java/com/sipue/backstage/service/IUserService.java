@@ -11,7 +11,7 @@ import com.sipue.common.core.model.BasePageVO;
 /**
  * 用户表
  *
- * @author wangjunyu
+ * @author mustang
  * @date 2022-07-11 17:05:16
  */
 public interface IUserService {
@@ -19,7 +19,7 @@ public interface IUserService {
     /**
      * @Description: 分页查询用户表
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      * @Date: 2022-07-11 17:05:16
      */
     BasePageVO<UserPageVO> getUserPage(UserPageDTO params);
@@ -27,7 +27,7 @@ public interface IUserService {
     /**
      * @Description: 添加用户
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      * @Date: 2022/7/11 17:13
      */
     void addUser(AddUserDTO params);
@@ -35,7 +35,7 @@ public interface IUserService {
     /**
      * @Description: 编辑用户
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      * @Date: 2022/8/16 15:34
      */
     void updateUser(UpdateUserDTO params);
@@ -50,7 +50,7 @@ public interface IUserService {
     /**
      * @Description: 删除用户
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      * @Date: 2022/8/29 15:34
      */
     void delUser(Long userId);

@@ -18,7 +18,7 @@ package com.sipue.code.generator.config.rules;
 /**
  * @Description: 表字段类型
  *
- * @Author: wangjunyu
+ * @Author: mustang
  * @Date: 2021/12/30 10:34
  */
 public enum DbColumnType implements IColumnType {

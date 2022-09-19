@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @Description: 服务远程配置
  *
- * @Author: wangjunyu
+ * @Author: mustang
  * @Date: 2022/7/22 18:02
  */
 @Configuration

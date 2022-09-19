@@ -7,7 +7,7 @@ import lombok.Setter;
 
 /**
  * @Description 用户权限信息
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月28日10:46:57
  * @Version 1.0
  */

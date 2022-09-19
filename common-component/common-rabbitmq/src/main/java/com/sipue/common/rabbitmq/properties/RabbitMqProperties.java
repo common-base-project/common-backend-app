@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * rabbitmq配置参数类
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022年03月17日11:00:47
  */
 @Slf4j

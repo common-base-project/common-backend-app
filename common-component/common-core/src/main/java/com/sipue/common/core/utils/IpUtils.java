@@ -12,7 +12,7 @@ import java.util.Enumeration;
 /**
  * @Description: 获取ip工具类
  *
- * @Author: wangjunyu 
+ * @Author: mustang
  */
 
 public class IpUtils {

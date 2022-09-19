@@ -6,7 +6,7 @@ import java.sql.*;
 /**
  * @Description: 数据库连接池
  *
- * @Author: wangjunyu
+ * @Author: mustang
  * @Date: 2021/12/30 10:28
  */
 public class DButil {

@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 
 /**
  * @Description 数字处理相关工具类
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月02日14:11:20
  * @Version 1.0
  */

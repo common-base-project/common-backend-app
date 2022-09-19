@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * @Description: 包相关的配置项
  *
- * @Author: wangjunyu
+ * @Author: mustang
  * @Date: 2021/12/30 15:24
  */
 @Data
@@ -29,7 +29,7 @@ public class PackageConfig {
     /**
      * @Description: 构建者
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      * @Date: 2021/12/30 15:27
      */
     public static class Builder implements IConfigBuilder<PackageConfig> {

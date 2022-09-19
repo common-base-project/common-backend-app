@@ -7,20 +7,21 @@ spring:
       datasource:
         #指定多个数据源链接信息 名称可自己指定
         db_user:
-          url: jdbc:mysql://127.0.0.1:3306/db_user?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+          url: jdbc:mysql://127.0.0.1:3306/db_commonUser?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
           username: root
-          password: 123456
+          password: mustang
           driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
     host: 127.0.0.1
     port: 6379
     database: 1
+    password: mustang
   main:
     allow-bean-definition-overriding: true # 允许bean覆盖
   rabbitmq:
     host: 111.229.150.34
     #    port: 5672
-    username: wangjunyu
+    username: guest
     password: 123456
     virtual-host: wjy_vhost
     # 消息发送确认

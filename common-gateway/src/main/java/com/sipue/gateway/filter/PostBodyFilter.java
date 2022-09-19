@@ -20,7 +20,7 @@ import java.util.Objects;
 
 /**
  * @Description 请求参数封装拦截器 将请求参数取出放入字符串中，便于后期进行http sign校验
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月25日17:51:51
  * @Version 1.0
  */

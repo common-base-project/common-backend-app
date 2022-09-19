@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 
 /**
- * @Author wangjunyu
+ * @Author mustang
  */
 @Configuration(proxyBeanMethods = false)
 @EnableConfigurationProperties(GatewayConfigProperties.class)

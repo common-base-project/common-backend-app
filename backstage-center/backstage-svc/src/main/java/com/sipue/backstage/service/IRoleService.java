@@ -12,7 +12,7 @@ import java.util.Set;
 /**
  * 角色表
  *
- * @author wangjunyu
+ * @author mustang
  * @date 2022-07-12 18:12:55
  */
 public interface IRoleService extends IService<RoleEntity> {
@@ -20,7 +20,7 @@ public interface IRoleService extends IService<RoleEntity> {
     /**
      * @Description: 查询用户角色列表
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      * @Date: 2022/8/1 10:08
      */
     List<RoleVO> getUserRoles(Long userId);
@@ -28,7 +28,7 @@ public interface IRoleService extends IService<RoleEntity> {
     /**
      * @Description: 查询角色列表
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      * @Date: 2022/8/12 15:04
      */
     List<RoleVO> getRoleList();
@@ -36,7 +36,7 @@ public interface IRoleService extends IService<RoleEntity> {
     /**
      * @Description: 更改角色菜单
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      * @Date: 2022/8/12 15:19
      */
     void updateRoleMenu(UpdateRoleMenuDTO params);
@@ -44,7 +44,7 @@ public interface IRoleService extends IService<RoleEntity> {
     /**
      * @Description: 获取角色权限
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      * @Date: 2022/8/17 10:56
      */
     List<String> getRolePermissions(List<Long> roleIds);

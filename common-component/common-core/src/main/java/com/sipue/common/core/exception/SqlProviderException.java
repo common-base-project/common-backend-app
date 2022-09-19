@@ -2,7 +2,7 @@ package com.sipue.common.core.exception;
 
 /**
  * @Description 实体类映射相关异常
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月28日11:54:22
  * @Version 1.0
  */

@@ -14,7 +14,7 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * @author : wangjunyu
+ * @author : mustang
  * @version : V1.0
  * @packageName :  com.apexsoft.crm.auth.sso.utils
  * @description : 客户提供的加解密方式

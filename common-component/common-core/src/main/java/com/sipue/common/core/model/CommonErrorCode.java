@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
- * @Author wangjunyu
+ * @Author mustang
  */
 @Getter
 @AllArgsConstructor
@@ -34,6 +34,7 @@ public enum CommonErrorCode implements IErrorCode{
     ACCESS_TOKEN_EMPTY("4003", "缺少认证令牌参数"),
     ACCOUNT_LOGIN_IN_OTHER_REGION("4006", "您的账号已在其他地方登录，请确认账号安全"),
     ACCOUNT_FORCE_LOGOUT("4007", "您的账号发生变更，已被强制下线。请重新登录！"),
+    ACCOUNT_USER_NOT_NULL("4008", "账号已存在！"),
 
 
     ;

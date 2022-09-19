@@ -29,7 +29,7 @@ import java.util.Objects;
 /**
  * 通用方法统一
  *
- * @Author wangjunyu
+ * @Author mustang
  * @version 1.0
  * @date 2022年6月30日19:41:59
  */
@@ -52,7 +52,7 @@ public class CommonSqlProvider {
     */
     /**
      * @Desc: 对于表中存在多个唯一键，需要将所有唯一键属性都设置。
-     * @Author wangjunyu
+     * @Author mustang
      * @return
      **/
     public String batchUpdateOnDuplicateKey(Map<String,Object> param) throws IllegalAccessException {
@@ -63,7 +63,7 @@ public class CommonSqlProvider {
     }
     /**
      * @Desc: 对于表中存在多个唯一键，需要将所有唯一键属性都设置。
-     * @Author wangjunyu
+     * @Author mustang
      * @return
      **/
     public String batchUpdateOnDuplicateKeys(Map<String,Object> param) throws IllegalAccessException {

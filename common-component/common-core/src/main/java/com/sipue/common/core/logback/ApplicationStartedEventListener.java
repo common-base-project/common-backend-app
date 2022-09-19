@@ -9,7 +9,7 @@ import org.springframework.core.env.ConfigurableEnvironment;
 
 /**
  * 上下文context准备时触发 将服务名称及服务环境放入MDC
- * @Author wangjunyu
+ * @Author mustang
  * @date
  * @version 1.0
  */

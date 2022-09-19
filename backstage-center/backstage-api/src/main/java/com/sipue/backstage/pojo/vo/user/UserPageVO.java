@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 /**
  * 分页查询用户表响应
  *
- * @author wangjunyu
+ * @author mustang
  * @date 2022-07-11 17:05:16
  */
 @ApiModel("分页查询用户表响应")

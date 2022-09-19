@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 /**
  * 用户表
  * 
- * @author wangjunyu
+ * @author mustang
  * @date 2022-07-11 17:05:16
  */
 @Data

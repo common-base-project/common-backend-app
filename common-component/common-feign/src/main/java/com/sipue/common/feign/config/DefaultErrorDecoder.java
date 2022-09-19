@@ -10,7 +10,7 @@ import feign.Response;
 import feign.codec.ErrorDecoder;
 
 /**
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022/1/20 9:36
  */
 public class DefaultErrorDecoder extends ErrorDecoder.Default {

@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
  * 数据库配置信息
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022/10/28 17:50
  */
 @Data

@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * @Description 全局静态常量
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月26日13:49:10
  * @Version 1.0
  */

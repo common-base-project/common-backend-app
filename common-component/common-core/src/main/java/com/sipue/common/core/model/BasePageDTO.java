@@ -5,7 +5,7 @@ import lombok.Setter;
 
 /**
  * @Description 基础分页请求参数
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月22日18:08:43
  * @Version 1.0
  */

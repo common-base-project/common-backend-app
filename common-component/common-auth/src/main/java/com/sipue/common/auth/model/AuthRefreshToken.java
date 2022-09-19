@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 /**
  * 刷新令牌信息
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022/1/24 10:32
  */
 @Data

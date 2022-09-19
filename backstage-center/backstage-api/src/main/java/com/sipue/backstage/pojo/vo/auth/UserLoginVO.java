@@ -9,7 +9,7 @@ import lombok.*;
 /**
  * @Description: 登录响应用户
  *
- * @Author: wangjunyu
+ * @Author: mustang
  * @Date: 2022/7/11 18:22
  */
 @ApiModel(value = "登录响应用户")

@@ -34,7 +34,7 @@ import static com.sipue.common.core.constants.RedisConstants.serializeKey;
 /**
  * 用户表接口实现类
  *
- * @author wangjunyu
+ * @author mustang
  * @date 2022-07-11 17:05:16
  */
 @Service

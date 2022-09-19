@@ -12,7 +12,7 @@ import java.util.Set;
 /**
  * 菜单权限表
  *
- * @author wangjunyu
+ * @author mustang
  * @date 2022-07-11 15:10:17
  */
 public interface IMenuService {
@@ -20,7 +20,7 @@ public interface IMenuService {
     /**
      * @Description: 查询菜单权限列表
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      * @Date: 2022/7/11 16:08
      */
     List<Tree<Long>> treeMenu(Long parentId);
@@ -28,7 +28,7 @@ public interface IMenuService {
     /**
      * @Description: 通过角色编号查询菜单
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      * @Date: 2022/8/11 17:47
      */
     Set<MenuEntity> getMenuByRoleId(Long roleId);
@@ -36,7 +36,7 @@ public interface IMenuService {
     /**
      * @Description: 查询菜单
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      * @Date: 2022/8/11 17:54
      */
     List<Tree<Long>> filterMenu(Set<MenuEntity> menuSet, Long parentId);
@@ -44,7 +44,7 @@ public interface IMenuService {
     /**
      * @Description: 新增菜单
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      * @Date: 2022/7/11 16:43
      */
     void addMenu(AddMenuDTO params);
@@ -52,7 +52,7 @@ public interface IMenuService {
     /**
      * @Description: 新增菜单
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      * @Date: 2022/7/11 16:43
      */
     void updateMenu(UpdateMenuDTO params);
@@ -60,7 +60,7 @@ public interface IMenuService {
     /**
      * @Description: 删除菜单
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      * @Date: 2022/7/11 16:43
      */
     void deleteMenu(Long menuId);

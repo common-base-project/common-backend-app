@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 编辑角色菜单请求参数
  *
- * @author wangjunyu
+ * @author mustang
  * @date 2022-07-12 18:12:55
  */
 @ApiModel("编辑角色菜单请求参数")

@@ -13,7 +13,7 @@ import java.util.Set;
 
 /**
  * @Description Feign请求拦截器 同时添加请求头
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月05日13:37:31
  * @Version 1.0
  */

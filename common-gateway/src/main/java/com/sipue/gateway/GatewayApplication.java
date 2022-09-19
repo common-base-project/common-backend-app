@@ -7,7 +7,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * 网关服务
- * @Author wangjunyu
+ * @Author mustang
  */
 @SpringBootApplication
 public class GatewayApplication {

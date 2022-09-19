@@ -6,7 +6,7 @@ import java.io.PrintStream;
 /**
  * 字符串扩展
  *
- * @Author wangjunyu
+ * @Author mustang
  * @version 1.0
  * @date 2022年6月30日19:37:33
  */

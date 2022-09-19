@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * swagger配置映射
- * @Author wangjunyu
+ * @Author mustang
  */
 @Data
 @ConfigurationProperties("swagger")

@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS `sipue_job`;
+DROP DATABASE IF EXISTS `db_commonJob`;
 
-CREATE DATABASE  `qishuoshuo_job` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE  `db_commonJob` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-use `sipue_job`;
+use `db_commonJob`;
 
 SET NAMES utf8;
 

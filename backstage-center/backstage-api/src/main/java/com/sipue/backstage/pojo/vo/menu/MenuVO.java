@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 /**
  * @Description: 菜单信息响应
  *
- * @Author: wangjunyu
+ * @Author: mustang
  * @Date: 2022/8/11 17:44
  */
 @ApiModel("菜单信息响应")

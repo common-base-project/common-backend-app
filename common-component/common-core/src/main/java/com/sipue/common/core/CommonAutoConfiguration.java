@@ -12,7 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  * 自动装载全局配置
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022/12/15 14:04
  */
 

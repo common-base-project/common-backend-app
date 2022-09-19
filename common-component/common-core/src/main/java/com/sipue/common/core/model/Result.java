@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * 响应结果参数封装
- * @Author wangjunyu
+ * @Author mustang
  */
 @Data
 @NoArgsConstructor

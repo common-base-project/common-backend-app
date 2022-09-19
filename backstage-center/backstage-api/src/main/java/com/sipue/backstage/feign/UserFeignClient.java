@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 /**
  * @Description: 用户管理feign
  *
- * @Author: wangjunyu
+ * @Author: mustang
  * @Date: 2022/7/22 11:38
  */
 @FeignClient(name = "backstage-center",url = "${sipue.api.backstage}")

@@ -11,7 +11,7 @@ import javax.validation.constraints.NotEmpty;
 /**
  * @Description: 用户id请求参数
  *
- * @Author: wangjunyu
+ * @Author: mustang
  * @Date: 2022/8/16 15:30
  */
 @ApiModel("后台用户id请求参数")

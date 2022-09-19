@@ -3,7 +3,7 @@ package com.sipue.common.auth.enums;
 /**
  * @Description: 权限注解的验证模式
  *
- * @Author: wangjunyu
+ * @Author: mustang
  * @Date: 2022/8/17 14:07
  */
 public enum Logical {

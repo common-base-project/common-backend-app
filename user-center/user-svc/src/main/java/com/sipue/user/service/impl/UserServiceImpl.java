@@ -1,5 +1,7 @@
 package com.sipue.user.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import com.sipue.user.service.IUserService;
@@ -22,7 +24,7 @@ import java.util.Objects;
 /**
  * 用户接口实现类
  *
- * @author wangjunyu
+ * @author mustang
  * @date 2022-08-22 17:25:57
  */
 @Service
@@ -44,6 +46,10 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public void addUser(AddUserDTO params) {
+        UserEntity oldEntity = getUserByPhone(params.getPhone());
+        if(!Objects.isNull(oldEntity)){
+            throw new ServiceException(CommonErrorCode.ACCOUNT_USER_NOT_NULL);
+        }
         UserEntity entity = params.covertBean(UserEntity.class);
         userMapper.insert(entity);
     }
@@ -65,6 +71,14 @@ public class UserServiceImpl implements IUserService {
             throw new ServiceException(CommonErrorCode.VALIDATE_CODE_ERROR);
         }
         userMapper.deleteById(entity);
+    }
+
+    @Override
+    public UserEntity getUserByPhone(String phone) {
+        LambdaQueryWrapper<UserEntity> wrapper = Wrappers.lambdaQuery();
+        wrapper.eq(UserEntity::getPhone, phone);
+        UserEntity userEntity = userMapper.selectOne(wrapper);
+        return userEntity;
     }
 
 }

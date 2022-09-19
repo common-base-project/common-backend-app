@@ -6,7 +6,7 @@ import lombok.Getter;
 
 /**
  * @Description 业务类型
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月02日17:06:31
  * @Version 1.0
  */

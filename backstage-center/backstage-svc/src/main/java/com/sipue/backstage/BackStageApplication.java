@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @Description: 后台管理系统程序主入口
  *
- * @Author: wangjunyu
+ * @Author: mustang
  * @Date: 2022/7/11 14:05
  */
 @SpringBootApplication

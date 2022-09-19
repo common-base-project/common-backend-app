@@ -2,7 +2,7 @@ package com.sipue.common.core.constants;
 
 /**
  * @Description 请求头静态常量
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月25日11:00:50
  * @Version 1.0
  */

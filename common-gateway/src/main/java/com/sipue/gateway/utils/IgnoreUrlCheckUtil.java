@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 
 /**
  * 验证请求url是否忽略
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022/1/24 17:03
  */
 public class IgnoreUrlCheckUtil {

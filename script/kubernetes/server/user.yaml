@@ -23,7 +23,7 @@ spec:
         - name: registry-secret
       containers:
         - name: user-svc
-          image: registry-vpc.cn-beijing.aliyuncs.com/wangjunyu/user-svc:v1.0.0
+          image: registry-vpc.cn-beijing.aliyuncs.com/mustang/user-svc:v1.0.0
           imagePullPolicy: Always
           env:
             - name: SPRING_PROFILES_ACTIVE

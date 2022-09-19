@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * @Description 公共映射接口 预留Mybatis扩展
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月28日12:08:40
  * @Version 1.0
  */

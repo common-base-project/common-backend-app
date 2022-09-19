@@ -9,7 +9,7 @@ import lombok.Data;
 /**
  * 菜单权限表
  * 
- * @author wangjunyu
+ * @author mustang
  * @date 2022-07-11 15:10:17
  */
 @Data

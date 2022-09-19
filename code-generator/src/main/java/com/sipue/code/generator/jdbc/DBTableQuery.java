@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * @Description: db查询类
  *
- * @Author: wangjunyu
+ * @Author: mustang
  * @Date: 2021/12/30 16:49
  */
 public class DBTableQuery {

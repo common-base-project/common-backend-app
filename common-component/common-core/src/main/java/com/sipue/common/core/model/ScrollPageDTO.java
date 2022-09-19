@@ -7,7 +7,7 @@ import lombok.Setter;
 
 /**
  * 滚动分页请求对象
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022年6月30日09:38:34
  * @version 1.0
  */

@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 /**
  * 用户id请求参数
  *
- * @author wangjunyu
+ * @author mustang
  * @date 2022-08-22 16:55:22
  */
 @ApiModel("用户id请求参数")

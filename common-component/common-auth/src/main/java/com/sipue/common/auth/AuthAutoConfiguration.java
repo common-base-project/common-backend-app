@@ -6,7 +6,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Import;
 
 /**
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022/1/24 9:58
  */
 @EnableConfigurationProperties({AuthProperties.class})

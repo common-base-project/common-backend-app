@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * @Description: 列的属性
  *
- * @Author: wangjunyu
+ * @Author: mustang
  * @Date: 2021/12/30 14:42
  */
 @Data

@@ -12,7 +12,7 @@ import java.util.Objects;
 /**
  * @ClassName BaseModel
  * @Description 基础模型 实现toString转换为json格式
- * @Author wangjunyu
+ * @Author mustang
  * @Date 2022年6月22日18:00:42
  * @Version 1.0
  */

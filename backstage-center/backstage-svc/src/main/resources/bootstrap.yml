@@ -1,7 +1,9 @@
 server:
   port: 9001
-
 spring:
   application:
     name: backstage-center
+
+  profiles:
+    active: dev
 

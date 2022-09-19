@@ -11,14 +11,14 @@ import java.util.Map;
 /**
  * 用户Mapper
  * 
- * @author wangjunyu
+ * @author mustang
  * @date 2022-08-22 17:05:34
  */
 public interface UserMapper extends CommonMapper<UserEntity> {
     /**
      * @Description: 分页查询用户
      *
-     * @Author: wangjunyu
+     * @Author: mustang
      * @Date: 2022-08-22 17:05:34
      */
     IPage<UserPageVO> getUserPage(Page<UserPageVO> page, @Param("params") Map<String, Object> map);

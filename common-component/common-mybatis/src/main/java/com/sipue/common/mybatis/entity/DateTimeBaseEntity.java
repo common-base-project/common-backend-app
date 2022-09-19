@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 /**
  * 包含人员业务类型（来源）的基础实体
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022年6月17日10:10:50
  * @version 1.0
  */

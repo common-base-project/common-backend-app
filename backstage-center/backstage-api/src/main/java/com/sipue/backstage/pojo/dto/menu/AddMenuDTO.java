@@ -9,7 +9,7 @@ import lombok.Setter;
 /**
  * 添加菜单请求对象
  *
- * @author wangjunyu
+ * @author mustang
  * @date 2022-07-11 15:10:17
  */
 @ApiModel("添加菜单请求对象参数")

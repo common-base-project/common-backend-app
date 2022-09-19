@@ -7,7 +7,7 @@ import lombok.Getter;
 /**
  * @Description: 后台管理服务错误码 110000-119999
  *
- * @Author: wangjunyu
+ * @Author: mustang
  * @Date: 2022/7/11 17:21
  */
 @Getter

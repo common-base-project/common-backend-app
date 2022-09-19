@@ -9,7 +9,7 @@ import lombok.Setter;
 /**
  * 查询菜单权限列表请求参数
  *
- * @author wangjunyu
+ * @author mustang
  * @date 2022-07-11 15:10:17
  */
 @ApiModel("查询菜单权限列表请求参数")

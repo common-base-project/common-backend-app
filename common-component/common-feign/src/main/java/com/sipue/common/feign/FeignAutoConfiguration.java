@@ -13,7 +13,7 @@ import org.springframework.http.converter.HttpMessageConverter;
 import java.util.stream.Collectors;
 
 /**
- * @Author wangjunyu
+ * @Author mustang
  * @date 2022/1/20 9:48
  */
 public class FeignAutoConfiguration {

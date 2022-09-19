@@ -18,7 +18,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import java.util.*;
 
 /**
- * @Author wangjunyu
+ * @Author mustang
  */
 
 @EnableKnife4j
@@ -58,7 +58,7 @@ public class SwaggerAutoConfiguration {
         return new ApiInfoBuilder()
                 .title(swaggerProperties.getName() + " 接口文档")
                 .description(swaggerProperties.getDescription())
-                .contact(new Contact("wangjunyu", null, "wangjunyu@splsw.com"))
+                .contact(new Contact("mustang", null, "mustang@splsw.com"))
                 .version("项目版本: " + swaggerProperties.getVersion() + ", Spring Boot Version: " + SpringBootVersion.getVersion())
                 .build();
     }

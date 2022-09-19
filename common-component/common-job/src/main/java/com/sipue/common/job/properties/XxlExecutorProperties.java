@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * xxl-job执行器配置
  *
- * @author wangjunyu
+ * @author mustang
  * @date 2022/7/18
  */
 @Data

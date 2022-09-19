@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 /**
  * 菜单权限表接口实现类
  *
- * @author wangjunyu
+ * @author mustang
  * @date 2022-07-11 15:10:17
  */
 @Service

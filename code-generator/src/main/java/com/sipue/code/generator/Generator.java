@@ -13,7 +13,7 @@ import java.sql.SQLException;
  * 参考: mybatis-plus 3.5.1
  *
  *
- * @Author: wangjunyu 
+ * @Author: mustang 
  * @Date: 2022/07/10 18:41
  */ 
 public class Generator {
@@ -29,7 +29,7 @@ public class Generator {
         SipueFastAutoGenerator.create(url,user,pwd)
                 //全局设置
                 .globalConfig(builder -> {
-                    builder.author("wangjunyu") //设置作者
+                    builder.author("mustang") //设置作者
                             .outputDir("G://")  //生成的文件输出目录
                             .tableName("t_user") //表名
                             .disableOpenDir() //禁止打开输出目录,如需生成代码后打开目录请删掉这行
