@@ -68,7 +68,7 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
         </dependency>
-        <dependency><!-- todo wangjunyu 此jar包后续要迁移走,关联的类也要做处理 -->
+        <dependency><!-- todo mustang 此jar包后续要迁移走,关联的类也要做处理 -->
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-core</artifactId>
             <scope>compile</scope>

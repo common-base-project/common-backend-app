@@ -23,7 +23,7 @@
 ### 模块说明
 
 ```lua
-sipue-cloud
+common-backend-cloud
 ├── sipue-common -- 系统公共模块
      ├── common-auth -- 授权
      ├── common-core -- 公共工具类核心包
@@ -49,5 +49,13 @@ sipue-cloud
 └── script 脚本
      └── sql -- sql脚本
      └── kubermetes -- yaml
+```
+
+### xxl-job-admin
+```markdown
+#### 默认用户
+admin   123456
+
+
 ```
 

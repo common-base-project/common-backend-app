@@ -10,12 +10,12 @@
     <version>1.0.0</version>
 
     <modules>
-        <module>sipue-common</module>
-        <module>sipue-gateway</module>
+        <module>common-component</module>
+        <module>common-gateway</module>
         <module>user-center</module>
         <module>backstage-center</module>
         <module>code-generator</module>
-        <module>sipue-visual</module>
+        <module>common-visual</module>
     </modules>
 
     <properties>

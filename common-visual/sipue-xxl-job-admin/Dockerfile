@@ -1,5 +1,5 @@
 FROM openjdk:8-jdk-alpine
-MAINTAINER 重庆思普信息科技有限公司 wangjunyu@splsw.com
+MAINTAINER MAIN mustang2247@gmail.com
 VOLUME ["temp","/logs"]
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN echo 'Asia/Shanghai' >/etc/timezone
