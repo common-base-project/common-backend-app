@@ -14,7 +14,7 @@ spring:
   redis:
     host: 127.0.0.1
     port: 6379
-    database: 1
+    database: 3
     password: mustang
   main:
     allow-bean-definition-overriding: true # 允许bean覆盖
