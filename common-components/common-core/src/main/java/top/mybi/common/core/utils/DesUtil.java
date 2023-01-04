@@ -11,7 +11,7 @@ import java.security.Security;
 public class DesUtil {
 
     /** 字符串默认键值     */
-    private static String strDefaultKey = "www.poyitong.com";
+    private static String strDefaultKey = "www.mustanggame.com";
 
     /** 加密工具     */
     private Cipher encryptCipher = null;
@@ -89,7 +89,8 @@ public class DesUtil {
      * @throws Exception
      */
     public DesUtil(String strKey) throws Exception {
-        Security.addProvider(new com.sun.crypto.provider.SunJCE());
+        Security.addProvider(java.security.Security.getProvider("SunJCE"));
+//        Security.addProvider(new com.sun.crypto.provider.SunJCE());
         Key key = getKey(strDefaultKey.getBytes());
 
         encryptCipher = Cipher.getInstance("DES");
@@ -184,7 +185,7 @@ public class DesUtil {
             System.out.println("加密后的字符：" + des.encrypt(test));
             System.out.println("解密后的字符：" + des.decrypt(des.encrypt(test)));
 
-            System.out.println("解密后的字符：" + des.decrypt("9db83809842e1bb24adc8bb6152a9741"));
+//            System.out.println("解密后的字符：" + des.decrypt("9db83809842e1bb24adc8bb6152a9741"));
         }
         catch (Exception e) {
             e.printStackTrace();
