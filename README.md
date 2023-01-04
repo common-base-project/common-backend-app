@@ -59,3 +59,13 @@ admin   123456
 
 ```
 
+## 推送命令
+```shell
+mvn clean install org.apache.maven.plugins:maven-deploy-plugin:2.8:deploy -DskipTests
+
+
+## 更新所有子 module 的版本
+mvn versions:update-child-modules
+
+```
+
