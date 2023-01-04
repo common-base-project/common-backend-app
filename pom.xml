@@ -242,7 +242,9 @@
                 <artifactId>backstage-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
+
         </dependencies>
+
     </dependencyManagement>
 
     <build>
@@ -258,4 +260,28 @@
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>rdc-releases</id>
+            <url>https://packages.aliyun.com/maven/repository/2123519-release-1d3b7c/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <snapshotRepository>
+            <id>rdc-snapshots</id>
+            <url>https://packages.aliyun.com/maven/repository/2123519-snapshot-5pgwkh/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </snapshotRepository>
+    </distributionManagement>
+
 </project>
