@@ -56,7 +56,7 @@ public class SwaggerAutoConfiguration {
         return new ApiInfoBuilder()
                 .title(swaggerProperties.getName() + " 接口文档")
                 .description(swaggerProperties.getDescription())
-                .contact(new Contact("mustang", null, "mustang@splsw.com"))
+                .contact(new Contact("mustang", null, "mustang2247@gmail.com"))
                 .version("项目版本: " + swaggerProperties.getVersion() + ", Spring Boot Version: " + SpringBootVersion.getVersion())
                 .build();
     }

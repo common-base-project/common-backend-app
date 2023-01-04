@@ -59,7 +59,7 @@ admin   123456
 
 ```
 
-## 推送命令
+### 推送命令
 ```shell
 mvn clean install org.apache.maven.plugins:maven-deploy-plugin:2.8:deploy -DskipTests
 
@@ -68,4 +68,47 @@ mvn clean install org.apache.maven.plugins:maven-deploy-plugin:2.8:deploy -Dskip
 mvn versions:update-child-modules
 
 ```
+
+### 使用方式
+```markdown
+1. 项目引用
+    <dependency>
+       <groupId>top.mybi</groupId>
+       <artifactId>common-swagger</artifactId>
+       <version>1.0.1</version>
+    </dependency>
+/// 配置跨域和资源等
+   public class WebConfig implements WebMvcConfigurer {
+       @Override
+       public void addResourceHandlers(ResourceHandlerRegistry registry) {
+           registry.addResourceHandler("doc.html").addResourceLocations("classpath:/META-INF/resources/");
+           registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+       }
+    
+       @Override
+       public void addCorsMappings(CorsRegistry registry) {
+           registry.addMapping("/**") // 设置允许跨域的路径
+           .allowedOriginPatterns("*")
+           .allowCredentials(true) // 是否允许证书 不再默认开启
+           .allowedMethods("*") // 设置允许的方法
+           .maxAge(3600);// 跨域允许时间
+       }
+   }
+
+2. feign 使用
+   <dependency>
+       <groupId>top.mybi</groupId>
+       <artifactId>common-feign</artifactId>
+       <version>1.0.1</version>
+   </dependency>
+   
+3. mybatis 使用
+   <dependency>
+        <groupId>top.mybi</groupId>
+        <artifactId>common-mybatis</artifactId>
+        <version>1.0.1</version>
+   </dependency>
+
+```
+
 
